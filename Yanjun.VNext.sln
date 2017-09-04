@@ -3,7 +3,49 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yanjun.VNext.Framework.Code", "Yanjun.VNext.Framework.Code\Yanjun.VNext.Framework.Code.csproj", "{DB24B7AF-AC58-4BB2-A95E-730BD4AFB243}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yanjun.VNext.Framework.Data", "Yanjun.VNext.Framework.Data\Yanjun.VNext.Framework.Data.csproj", "{82FBAE67-4CD9-4D01-9ACD-A8F75E35CDE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yanjun.VNext.Framework.Domain", "Yanjun.VNext.Framework.Domain\Yanjun.VNext.Framework.Domain.csproj", "{38034539-E389-46C2-9852-D657FE3E325C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yanjun.VNext.Framework.Map", "Yanjun.VNext.Framework.Map\Yanjun.VNext.Framework.Map.csproj", "{11F0C75F-30B5-4CA3-ADEA-1504525DA1EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yanjun.VNext.Framework.Mvc", "Yanjun.VNext.Framework.Mvc\Yanjun.VNext.Framework.Mvc.csproj", "{06ACC4C8-EF4D-4689-8C24-2694117C14D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yanjun.VNext.Framework.Service", "Yanjun.VNext.Framework.Service\Yanjun.VNext.Framework.Service.csproj", "{C647C978-3EC8-4873-8600-6342AA84805A}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB24B7AF-AC58-4BB2-A95E-730BD4AFB243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB24B7AF-AC58-4BB2-A95E-730BD4AFB243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB24B7AF-AC58-4BB2-A95E-730BD4AFB243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB24B7AF-AC58-4BB2-A95E-730BD4AFB243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82FBAE67-4CD9-4D01-9ACD-A8F75E35CDE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82FBAE67-4CD9-4D01-9ACD-A8F75E35CDE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82FBAE67-4CD9-4D01-9ACD-A8F75E35CDE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82FBAE67-4CD9-4D01-9ACD-A8F75E35CDE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38034539-E389-46C2-9852-D657FE3E325C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38034539-E389-46C2-9852-D657FE3E325C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38034539-E389-46C2-9852-D657FE3E325C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38034539-E389-46C2-9852-D657FE3E325C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11F0C75F-30B5-4CA3-ADEA-1504525DA1EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11F0C75F-30B5-4CA3-ADEA-1504525DA1EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11F0C75F-30B5-4CA3-ADEA-1504525DA1EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11F0C75F-30B5-4CA3-ADEA-1504525DA1EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06ACC4C8-EF4D-4689-8C24-2694117C14D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06ACC4C8-EF4D-4689-8C24-2694117C14D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06ACC4C8-EF4D-4689-8C24-2694117C14D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06ACC4C8-EF4D-4689-8C24-2694117C14D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C647C978-3EC8-4873-8600-6342AA84805A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C647C978-3EC8-4873-8600-6342AA84805A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C647C978-3EC8-4873-8600-6342AA84805A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C647C978-3EC8-4873-8600-6342AA84805A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

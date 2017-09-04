@@ -1,0 +1,1392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{06ACC4C8-EF4D-4689-8C24-2694117C14D2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Yanjun.VNext.Framework.Mvc</RootNamespace>
+    <AssemblyName>Yanjun.VNext.Framework.Mvc</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.0.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AutoFacConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\MyController.cs" />
+    <Compile Include="Areas\Sys\Controllers\CompanyController.cs" />
+    <Compile Include="Areas\Sys\Controllers\MenuController.cs" />
+    <Compile Include="Areas\Sys\SysAreaRegistration.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Filter\Attribute\MyActionAttribute.cs" />
+    <Compile Include="Filter\Attribute\MyExceptionHandleAttribute.cs" />
+    <Compile Include="Filter\Attribute\NotCheckUserAttribute.cs" />
+    <Compile Include="Filter\Attribute\NoTransactionAttribute.cs" />
+    <Compile Include="Filter\LoginFilter.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\model\org\Company.js" />
+    <Content Include="app\model\org\Staff.js" />
+    <Content Include="app\view\org\Company.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Extjs\ext-all-debug.js" />
+    <Content Include="Extjs\ext-all.js" />
+    <Content Include="Extjs\resources\ext\ext-watermark\demo-files\demo.css" />
+    <Content Include="Extjs\resources\ext\ext-watermark\demo-files\demo.js" />
+    <Content Include="Extjs\resources\ext\ext-watermark\demo.html" />
+    <Content Include="Extjs\resources\ext\ext-watermark\fonts\ext-watermark.svg" />
+    <Content Include="Extjs\resources\ext\ext-watermark\Read Me.txt" />
+    <Content Include="Extjs\resources\ext\ext-watermark\style.css" />
+    <Content Include="Extjs\resources\images\boundlist\trigger-arrow.png" />
+    <Content Include="Extjs\resources\images\box\corners-blue.gif" />
+    <Content Include="Extjs\resources\images\box\corners.gif" />
+    <Content Include="Extjs\resources\images\box\l-blue.gif" />
+    <Content Include="Extjs\resources\images\box\l.gif" />
+    <Content Include="Extjs\resources\images\box\r-blue.gif" />
+    <Content Include="Extjs\resources\images\box\r.gif" />
+    <Content Include="Extjs\resources\images\box\tb-blue.gif" />
+    <Content Include="Extjs\resources\images\box\tb.gif" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-arrow-open-rtl.gif" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-arrow-open-rtl.png" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-arrow-open.gif" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-arrow-open.png" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-arrow-rtl.gif" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-arrow.gif" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-arrow.png" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-scroll-left.gif" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-scroll-left.png" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-scroll-right.gif" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-scroll-right.png" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-split-arrow-open-rtl.gif" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-split-arrow-open-rtl.png" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-split-arrow-open.gif" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-split-arrow-open.png" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-split-arrow-over-rtl.gif" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-split-arrow-over-rtl.png" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-split-arrow-over.gif" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-split-arrow-over.png" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-split-arrow-rtl.gif" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-split-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-split-arrow.gif" />
+    <Content Include="Extjs\resources\images\breadcrumb\default-split-arrow.png" />
+    <Content Include="Extjs\resources\images\btn-group\btn-group-default-framed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn-group\btn-group-default-framed-notitle-corners.gif" />
+    <Content Include="Extjs\resources\images\btn-group\btn-group-default-framed-notitle-sides.gif" />
+    <Content Include="Extjs\resources\images\btn-group\btn-group-default-framed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-disabled-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-disabled-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-disabled-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-focus-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-focus-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-focus-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-focus-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-focus-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-focus-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-focus-pressed-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-focus-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-focus-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-pressed-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-large-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-disabled-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-disabled-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-disabled-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-focus-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-focus-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-focus-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-focus-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-focus-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-focus-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-focus-pressed-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-focus-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-focus-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-pressed-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-medium-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-disabled-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-disabled-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-disabled-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-focus-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-focus-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-focus-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-focus-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-focus-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-focus-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-focus-pressed-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-focus-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-focus-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-pressed-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-small-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-disabled-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-disabled-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-disabled-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-focus-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-focus-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-focus-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-focus-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-focus-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-focus-pressed-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-focus-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-focus-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-pressed-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-large-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-disabled-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-disabled-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-disabled-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-focus-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-focus-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-focus-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-focus-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-focus-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-focus-pressed-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-focus-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-focus-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-pressed-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-medium-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-disabled-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-disabled-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-disabled-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-focus-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-focus-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-focus-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-focus-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-focus-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-focus-pressed-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-focus-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-focus-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-pressed-fbg.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-default-toolbar-small-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-large-focus-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-large-focus-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-large-focus-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-large-focus-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-large-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-large-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-large-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-large-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-medium-focus-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-medium-focus-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-medium-focus-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-medium-focus-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-medium-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-medium-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-medium-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-medium-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-small-focus-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-small-focus-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-small-focus-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-small-focus-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-small-over-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-small-over-sides.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-small-pressed-corners.gif" />
+    <Content Include="Extjs\resources\images\btn\btn-plain-toolbar-small-pressed-sides.gif" />
+    <Content Include="Extjs\resources\images\button\arrow-rtl.gif" />
+    <Content Include="Extjs\resources\images\button\arrow.gif" />
+    <Content Include="Extjs\resources\images\button\btn.gif" />
+    <Content Include="Extjs\resources\images\button\default-large-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-large-arrow.png" />
+    <Content Include="Extjs\resources\images\button\default-large-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-large-s-arrow-b.png" />
+    <Content Include="Extjs\resources\images\button\default-large-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-large-s-arrow.png" />
+    <Content Include="Extjs\resources\images\button\default-medium-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-medium-arrow.png" />
+    <Content Include="Extjs\resources\images\button\default-medium-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-medium-s-arrow-b.png" />
+    <Content Include="Extjs\resources\images\button\default-medium-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-medium-s-arrow.png" />
+    <Content Include="Extjs\resources\images\button\default-small-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-small-arrow.png" />
+    <Content Include="Extjs\resources\images\button\default-small-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-small-s-arrow-b.png" />
+    <Content Include="Extjs\resources\images\button\default-small-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-small-s-arrow.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-large-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-large-arrow.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-large-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-large-s-arrow-b.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-large-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-large-s-arrow.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-medium-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-medium-arrow.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-medium-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-medium-s-arrow-b.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-medium-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-medium-s-arrow.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-small-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-small-arrow.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-small-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-small-s-arrow-b.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-small-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\default-toolbar-small-s-arrow.png" />
+    <Content Include="Extjs\resources\images\button\grid-cell-small-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\grid-cell-small-arrow.png" />
+    <Content Include="Extjs\resources\images\button\grid-cell-small-s-arrow-b.png" />
+    <Content Include="Extjs\resources\images\button\grid-cell-small-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\grid-cell-small-s-arrow.png" />
+    <Content Include="Extjs\resources\images\button\group-cs.gif" />
+    <Content Include="Extjs\resources\images\button\group-lr.gif" />
+    <Content Include="Extjs\resources\images\button\group-tb.gif" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-large-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-large-arrow.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-large-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-large-s-arrow-b.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-large-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-large-s-arrow.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-medium-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-medium-arrow.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-medium-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-medium-s-arrow-b.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-medium-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-medium-s-arrow.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-small-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-small-arrow.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-small-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-small-s-arrow-b.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-small-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\images\button\plain-toolbar-small-s-arrow.png" />
+    <Content Include="Extjs\resources\images\button\s-arrow-b-noline.gif" />
+    <Content Include="Extjs\resources\images\button\s-arrow-b.gif" />
+    <Content Include="Extjs\resources\images\button\s-arrow-bo.gif" />
+    <Content Include="Extjs\resources\images\button\s-arrow-light-rtl.gif" />
+    <Content Include="Extjs\resources\images\button\s-arrow-light.gif" />
+    <Content Include="Extjs\resources\images\button\s-arrow-noline-rtl.gif" />
+    <Content Include="Extjs\resources\images\button\s-arrow-noline.gif" />
+    <Content Include="Extjs\resources\images\button\s-arrow-o-rtl.gif" />
+    <Content Include="Extjs\resources\images\button\s-arrow-o.gif" />
+    <Content Include="Extjs\resources\images\button\s-arrow-rtl.gif" />
+    <Content Include="Extjs\resources\images\button\s-arrow.gif" />
+    <Content Include="Extjs\resources\images\datepicker\arrow-left.png" />
+    <Content Include="Extjs\resources\images\datepicker\arrow-right.png" />
+    <Content Include="Extjs\resources\images\datepicker\datepicker-footer-bg.gif" />
+    <Content Include="Extjs\resources\images\datepicker\datepicker-header-bg.gif" />
+    <Content Include="Extjs\resources\images\datepicker\month-arrow.png" />
+    <Content Include="Extjs\resources\images\dd\drop-add.gif" />
+    <Content Include="Extjs\resources\images\dd\drop-add.png" />
+    <Content Include="Extjs\resources\images\dd\drop-no.gif" />
+    <Content Include="Extjs\resources\images\dd\drop-no.png" />
+    <Content Include="Extjs\resources\images\dd\drop-yes.gif" />
+    <Content Include="Extjs\resources\images\dd\drop-yes.png" />
+    <Content Include="Extjs\resources\images\editor\tb-sprite.gif" />
+    <Content Include="Extjs\resources\images\editor\tb-sprite.png" />
+    <Content Include="Extjs\resources\images\fieldset\collapse-tool.png" />
+    <Content Include="Extjs\resources\images\form\checkbox.gif" />
+    <Content Include="Extjs\resources\images\form\checkbox.png" />
+    <Content Include="Extjs\resources\images\form\clear-trigger-rtl.gif" />
+    <Content Include="Extjs\resources\images\form\clear-trigger-rtl.png" />
+    <Content Include="Extjs\resources\images\form\clear-trigger.gif" />
+    <Content Include="Extjs\resources\images\form\clear-trigger.png" />
+    <Content Include="Extjs\resources\images\form\date-trigger-rtl.gif" />
+    <Content Include="Extjs\resources\images\form\date-trigger-rtl.png" />
+    <Content Include="Extjs\resources\images\form\date-trigger.gif" />
+    <Content Include="Extjs\resources\images\form\date-trigger.png" />
+    <Content Include="Extjs\resources\images\form\error-tip-corners.gif" />
+    <Content Include="Extjs\resources\images\form\exclamation.gif" />
+    <Content Include="Extjs\resources\images\form\exclamation.png" />
+    <Content Include="Extjs\resources\images\form\radio.gif" />
+    <Content Include="Extjs\resources\images\form\radio.png" />
+    <Content Include="Extjs\resources\images\form\search-trigger-rtl.gif" />
+    <Content Include="Extjs\resources\images\form\search-trigger-rtl.png" />
+    <Content Include="Extjs\resources\images\form\search-trigger.gif" />
+    <Content Include="Extjs\resources\images\form\search-trigger.png" />
+    <Content Include="Extjs\resources\images\form\spinner-down-rtl.png" />
+    <Content Include="Extjs\resources\images\form\spinner-down.png" />
+    <Content Include="Extjs\resources\images\form\spinner-rtl.gif" />
+    <Content Include="Extjs\resources\images\form\spinner-rtl.png" />
+    <Content Include="Extjs\resources\images\form\spinner-small-rtl.gif" />
+    <Content Include="Extjs\resources\images\form\spinner-small.gif" />
+    <Content Include="Extjs\resources\images\form\spinner-up-rtl.png" />
+    <Content Include="Extjs\resources\images\form\spinner-up.png" />
+    <Content Include="Extjs\resources\images\form\spinner.gif" />
+    <Content Include="Extjs\resources\images\form\spinner.png" />
+    <Content Include="Extjs\resources\images\form\tag-field-item-close.gif" />
+    <Content Include="Extjs\resources\images\form\tag-field-item-close.png" />
+    <Content Include="Extjs\resources\images\form\text-bg.gif" />
+    <Content Include="Extjs\resources\images\form\trigger-rtl.gif" />
+    <Content Include="Extjs\resources\images\form\trigger-rtl.png" />
+    <Content Include="Extjs\resources\images\form\trigger-square-rtl.gif" />
+    <Content Include="Extjs\resources\images\form\trigger-square.gif" />
+    <Content Include="Extjs\resources\images\form\trigger-tpl-rtl.gif" />
+    <Content Include="Extjs\resources\images\form\trigger-tpl.gif" />
+    <Content Include="Extjs\resources\images\form\trigger.gif" />
+    <Content Include="Extjs\resources\images\form\trigger.png" />
+    <Content Include="Extjs\resources\images\grid-row-editor-buttons\grid-row-editor-buttons-default-bottom-corners.gif" />
+    <Content Include="Extjs\resources\images\grid-row-editor-buttons\grid-row-editor-buttons-default-bottom-sides.gif" />
+    <Content Include="Extjs\resources\images\grid-row-editor-buttons\grid-row-editor-buttons-default-top-corners.gif" />
+    <Content Include="Extjs\resources\images\grid-row-editor-buttons\grid-row-editor-buttons-default-top-sides.gif" />
+    <Content Include="Extjs\resources\images\grid\arrow-left-white.gif" />
+    <Content Include="Extjs\resources\images\grid\arrow-right-white.gif" />
+    <Content Include="Extjs\resources\images\grid\cell-special-bg.gif" />
+    <Content Include="Extjs\resources\images\grid\cell-special-bg.png" />
+    <Content Include="Extjs\resources\images\grid\cell-special-selected-bg.gif" />
+    <Content Include="Extjs\resources\images\grid\cell-special-selected-bg.png" />
+    <Content Include="Extjs\resources\images\grid\col-move-bottom.gif" />
+    <Content Include="Extjs\resources\images\grid\col-move-bottom.png" />
+    <Content Include="Extjs\resources\images\grid\col-move-top.gif" />
+    <Content Include="Extjs\resources\images\grid\col-move-top.png" />
+    <Content Include="Extjs\resources\images\grid\column-header-bg.gif" />
+    <Content Include="Extjs\resources\images\grid\column-header-over-bg.gif" />
+    <Content Include="Extjs\resources\images\grid\columns.gif" />
+    <Content Include="Extjs\resources\images\grid\columns.png" />
+    <Content Include="Extjs\resources\images\grid\dd-insert-arrow-left.gif" />
+    <Content Include="Extjs\resources\images\grid\dd-insert-arrow-left.png" />
+    <Content Include="Extjs\resources\images\grid\dd-insert-arrow-right.gif" />
+    <Content Include="Extjs\resources\images\grid\dd-insert-arrow-right.png" />
+    <Content Include="Extjs\resources\images\grid\dirty-rtl.gif" />
+    <Content Include="Extjs\resources\images\grid\dirty-rtl.png" />
+    <Content Include="Extjs\resources\images\grid\dirty.gif" />
+    <Content Include="Extjs\resources\images\grid\dirty.png" />
+    <Content Include="Extjs\resources\images\grid\done.gif" />
+    <Content Include="Extjs\resources\images\grid\drop-no.gif" />
+    <Content Include="Extjs\resources\images\grid\drop-no.png" />
+    <Content Include="Extjs\resources\images\grid\drop-yes.gif" />
+    <Content Include="Extjs\resources\images\grid\drop-yes.png" />
+    <Content Include="Extjs\resources\images\grid\filters\equals.png" />
+    <Content Include="Extjs\resources\images\grid\filters\find.png" />
+    <Content Include="Extjs\resources\images\grid\filters\greater_than.png" />
+    <Content Include="Extjs\resources\images\grid\filters\less_than.png" />
+    <Content Include="Extjs\resources\images\grid\footer-bg.gif" />
+    <Content Include="Extjs\resources\images\grid\grid-blue-hd.gif" />
+    <Content Include="Extjs\resources\images\grid\grid-blue-split.gif" />
+    <Content Include="Extjs\resources\images\grid\grid-hrow.gif" />
+    <Content Include="Extjs\resources\images\grid\grid-loading.gif" />
+    <Content Include="Extjs\resources\images\grid\grid-split.gif" />
+    <Content Include="Extjs\resources\images\grid\grid-vista-hd.gif" />
+    <Content Include="Extjs\resources\images\grid\grid3-hd-btn-left.gif" />
+    <Content Include="Extjs\resources\images\grid\grid3-hd-btn.gif" />
+    <Content Include="Extjs\resources\images\grid\grid3-hrow-over.gif" />
+    <Content Include="Extjs\resources\images\grid\grid3-hrow.gif" />
+    <Content Include="Extjs\resources\images\grid\grid3-rowheader.gif" />
+    <Content Include="Extjs\resources\images\grid\group-by.gif" />
+    <Content Include="Extjs\resources\images\grid\group-by.png" />
+    <Content Include="Extjs\resources\images\grid\group-collapse.gif" />
+    <Content Include="Extjs\resources\images\grid\group-collapse.png" />
+    <Content Include="Extjs\resources\images\grid\group-expand-sprite.gif" />
+    <Content Include="Extjs\resources\images\grid\group-expand.gif" />
+    <Content Include="Extjs\resources\images\grid\group-expand.png" />
+    <Content Include="Extjs\resources\images\grid\hd-pop.gif" />
+    <Content Include="Extjs\resources\images\grid\hd-pop.png" />
+    <Content Include="Extjs\resources\images\grid\hmenu-asc.gif" />
+    <Content Include="Extjs\resources\images\grid\hmenu-asc.png" />
+    <Content Include="Extjs\resources\images\grid\hmenu-desc.gif" />
+    <Content Include="Extjs\resources\images\grid\hmenu-desc.png" />
+    <Content Include="Extjs\resources\images\grid\hmenu-lock.gif" />
+    <Content Include="Extjs\resources\images\grid\hmenu-lock.png" />
+    <Content Include="Extjs\resources\images\grid\hmenu-unlock.gif" />
+    <Content Include="Extjs\resources\images\grid\hmenu-unlock.png" />
+    <Content Include="Extjs\resources\images\grid\invalid_line.gif" />
+    <Content Include="Extjs\resources\images\grid\loading.gif" />
+    <Content Include="Extjs\resources\images\grid\mso-hd.gif" />
+    <Content Include="Extjs\resources\images\grid\nowait.gif" />
+    <Content Include="Extjs\resources\images\grid\page-first-disabled.gif" />
+    <Content Include="Extjs\resources\images\grid\page-first.gif" />
+    <Content Include="Extjs\resources\images\grid\page-first.png" />
+    <Content Include="Extjs\resources\images\grid\page-last-disabled.gif" />
+    <Content Include="Extjs\resources\images\grid\page-last.gif" />
+    <Content Include="Extjs\resources\images\grid\page-last.png" />
+    <Content Include="Extjs\resources\images\grid\page-next-disabled.gif" />
+    <Content Include="Extjs\resources\images\grid\page-next.gif" />
+    <Content Include="Extjs\resources\images\grid\page-next.png" />
+    <Content Include="Extjs\resources\images\grid\page-prev-disabled.gif" />
+    <Content Include="Extjs\resources\images\grid\page-prev.gif" />
+    <Content Include="Extjs\resources\images\grid\page-prev.png" />
+    <Content Include="Extjs\resources\images\grid\pick-button.gif" />
+    <Content Include="Extjs\resources\images\grid\pick-button.png" />
+    <Content Include="Extjs\resources\images\grid\property-cell-bg.gif" />
+    <Content Include="Extjs\resources\images\grid\property-cell-selected-bg.gif" />
+    <Content Include="Extjs\resources\images\grid\refresh-disabled.gif" />
+    <Content Include="Extjs\resources\images\grid\refresh.gif" />
+    <Content Include="Extjs\resources\images\grid\refresh.png" />
+    <Content Include="Extjs\resources\images\grid\row-check-sprite.gif" />
+    <Content Include="Extjs\resources\images\grid\row-expand-sprite.gif" />
+    <Content Include="Extjs\resources\images\grid\row-over.gif" />
+    <Content Include="Extjs\resources\images\grid\row-sel.gif" />
+    <Content Include="Extjs\resources\images\grid\sort-hd.gif" />
+    <Content Include="Extjs\resources\images\grid\sort_asc.gif" />
+    <Content Include="Extjs\resources\images\grid\sort_asc.png" />
+    <Content Include="Extjs\resources\images\grid\sort_desc.gif" />
+    <Content Include="Extjs\resources\images\grid\sort_desc.png" />
+    <Content Include="Extjs\resources\images\grid\wait.gif" />
+    <Content Include="Extjs\resources\images\layout\mini-bottom.gif" />
+    <Content Include="Extjs\resources\images\layout\mini-left.gif" />
+    <Content Include="Extjs\resources\images\layout\mini-right.gif" />
+    <Content Include="Extjs\resources\images\layout\mini-top.gif" />
+    <Content Include="Extjs\resources\images\loadmask\loading.gif" />
+    <Content Include="Extjs\resources\images\magnify.png" />
+    <Content Include="Extjs\resources\images\menu\default-checked.gif" />
+    <Content Include="Extjs\resources\images\menu\default-checked.png" />
+    <Content Include="Extjs\resources\images\menu\default-group-checked.gif" />
+    <Content Include="Extjs\resources\images\menu\default-group-checked.png" />
+    <Content Include="Extjs\resources\images\menu\default-menu-parent-left.gif" />
+    <Content Include="Extjs\resources\images\menu\default-menu-parent-left.png" />
+    <Content Include="Extjs\resources\images\menu\default-menu-parent.gif" />
+    <Content Include="Extjs\resources\images\menu\default-menu-parent.png" />
+    <Content Include="Extjs\resources\images\menu\default-menubar-menu-parent.gif" />
+    <Content Include="Extjs\resources\images\menu\default-menubar-menu-parent.png" />
+    <Content Include="Extjs\resources\images\menu\default-scroll-bottom.gif" />
+    <Content Include="Extjs\resources\images\menu\default-scroll-bottom.png" />
+    <Content Include="Extjs\resources\images\menu\default-scroll-top.gif" />
+    <Content Include="Extjs\resources\images\menu\default-scroll-top.png" />
+    <Content Include="Extjs\resources\images\menu\default-unchecked.gif" />
+    <Content Include="Extjs\resources\images\menu\default-unchecked.png" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-bottom-bg.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-bottom-corners.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-bottom-fbg.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-bottom-sides.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-bottom-corners.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-bottom-fbg.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-bottom-sides.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-left-corners-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-left-corners.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-left-fbg-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-left-fbg.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-left-sides-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-left-sides.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-right-corners-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-right-corners.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-right-fbg-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-right-fbg.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-right-sides-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-right-sides.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-top-corners.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-top-fbg.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-collapsed-top-sides.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-left-corners-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-left-corners.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-left-fbg-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-left-fbg.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-left-sides-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-left-sides.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-right-corners-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-right-corners.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-right-fbg-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-right-fbg.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-right-sides-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-right-sides.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-top-corners.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-top-fbg.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-framed-top-sides.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-left-bg-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-left-bg.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-right-bg-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-right-bg.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-default-top-bg.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-bottom-corners.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-bottom-sides.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-collapsed-bottom-corners.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-collapsed-bottom-sides.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-collapsed-left-corners-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-collapsed-left-corners.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-collapsed-left-sides.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-collapsed-right-corners-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-collapsed-right-corners.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-collapsed-right-sides.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-collapsed-top-corners.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-collapsed-top-sides.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-left-corners-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-left-corners.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-left-sides.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-right-corners-rtl.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-right-corners.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-right-sides.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-top-corners.gif" />
+    <Content Include="Extjs\resources\images\panel-header\panel-header-light-framed-top-sides.gif" />
+    <Content Include="Extjs\resources\images\panel\panel-default-framed-corners.gif" />
+    <Content Include="Extjs\resources\images\panel\panel-default-framed-sides.gif" />
+    <Content Include="Extjs\resources\images\panel\panel-light-framed-corners.gif" />
+    <Content Include="Extjs\resources\images\panel\panel-light-framed-sides.gif" />
+    <Content Include="Extjs\resources\images\progress\progress-default-bg.gif" />
+    <Content Include="Extjs\resources\images\shared\blue-loading.gif" />
+    <Content Include="Extjs\resources\images\shared\calendar.gif" />
+    <Content Include="Extjs\resources\images\shared\glass-bg.gif" />
+    <Content Include="Extjs\resources\images\shared\hd-sprite.gif" />
+    <Content Include="Extjs\resources\images\shared\icon-error.gif" />
+    <Content Include="Extjs\resources\images\shared\icon-error.png" />
+    <Content Include="Extjs\resources\images\shared\icon-info.gif" />
+    <Content Include="Extjs\resources\images\shared\icon-info.png" />
+    <Content Include="Extjs\resources\images\shared\icon-question.gif" />
+    <Content Include="Extjs\resources\images\shared\icon-question.png" />
+    <Content Include="Extjs\resources\images\shared\icon-warning.gif" />
+    <Content Include="Extjs\resources\images\shared\icon-warning.png" />
+    <Content Include="Extjs\resources\images\shared\large-loading.gif" />
+    <Content Include="Extjs\resources\images\shared\left-btn.gif" />
+    <Content Include="Extjs\resources\images\shared\loading-balls.gif" />
+    <Content Include="Extjs\resources\images\shared\right-btn.gif" />
+    <Content Include="Extjs\resources\images\shared\shadow-c.png" />
+    <Content Include="Extjs\resources\images\shared\shadow-lr.png" />
+    <Content Include="Extjs\resources\images\shared\shadow.png" />
+    <Content Include="Extjs\resources\images\shared\warning.gif" />
+    <Content Include="Extjs\resources\images\sizer\e-handle-dark.gif" />
+    <Content Include="Extjs\resources\images\sizer\e-handle.gif" />
+    <Content Include="Extjs\resources\images\sizer\e-handle.png" />
+    <Content Include="Extjs\resources\images\sizer\ne-handle-dark.gif" />
+    <Content Include="Extjs\resources\images\sizer\ne-handle.gif" />
+    <Content Include="Extjs\resources\images\sizer\ne-handle.png" />
+    <Content Include="Extjs\resources\images\sizer\nw-handle-dark.gif" />
+    <Content Include="Extjs\resources\images\sizer\nw-handle.gif" />
+    <Content Include="Extjs\resources\images\sizer\nw-handle.png" />
+    <Content Include="Extjs\resources\images\sizer\s-handle-dark.gif" />
+    <Content Include="Extjs\resources\images\sizer\s-handle.gif" />
+    <Content Include="Extjs\resources\images\sizer\s-handle.png" />
+    <Content Include="Extjs\resources\images\sizer\se-handle-dark.gif" />
+    <Content Include="Extjs\resources\images\sizer\se-handle.gif" />
+    <Content Include="Extjs\resources\images\sizer\se-handle.png" />
+    <Content Include="Extjs\resources\images\sizer\square.gif" />
+    <Content Include="Extjs\resources\images\sizer\sw-handle-dark.gif" />
+    <Content Include="Extjs\resources\images\sizer\sw-handle.gif" />
+    <Content Include="Extjs\resources\images\sizer\sw-handle.png" />
+    <Content Include="Extjs\resources\images\slider\slider-bg.png" />
+    <Content Include="Extjs\resources\images\slider\slider-thumb.png" />
+    <Content Include="Extjs\resources\images\slider\slider-v-bg.png" />
+    <Content Include="Extjs\resources\images\slider\slider-v-thumb.png" />
+    <Content Include="Extjs\resources\images\tab-bar\default-more-left.gif" />
+    <Content Include="Extjs\resources\images\tab-bar\default-more-left.png" />
+    <Content Include="Extjs\resources\images\tab-bar\default-more.gif" />
+    <Content Include="Extjs\resources\images\tab-bar\default-more.png" />
+    <Content Include="Extjs\resources\images\tab-bar\default-plain-more-left.png" />
+    <Content Include="Extjs\resources\images\tab-bar\default-plain-more.png" />
+    <Content Include="Extjs\resources\images\tab-bar\default-plain-scroll-bottom.png" />
+    <Content Include="Extjs\resources\images\tab-bar\default-plain-scroll-left.png" />
+    <Content Include="Extjs\resources\images\tab-bar\default-plain-scroll-right.png" />
+    <Content Include="Extjs\resources\images\tab-bar\default-plain-scroll-top.png" />
+    <Content Include="Extjs\resources\images\tab-bar\default-scroll-bottom-left.gif" />
+    <Content Include="Extjs\resources\images\tab-bar\default-scroll-bottom-right.gif" />
+    <Content Include="Extjs\resources\images\tab-bar\default-scroll-bottom.png" />
+    <Content Include="Extjs\resources\images\tab-bar\default-scroll-left-bottom.gif" />
+    <Content Include="Extjs\resources\images\tab-bar\default-scroll-left-top.gif" />
+    <Content Include="Extjs\resources\images\tab-bar\default-scroll-left.png" />
+    <Content Include="Extjs\resources\images\tab-bar\default-scroll-right-bottom.gif" />
+    <Content Include="Extjs\resources\images\tab-bar\default-scroll-right-top.gif" />
+    <Content Include="Extjs\resources\images\tab-bar\default-scroll-right.png" />
+    <Content Include="Extjs\resources\images\tab-bar\default-scroll-top-left.gif" />
+    <Content Include="Extjs\resources\images\tab-bar\default-scroll-top-right.gif" />
+    <Content Include="Extjs\resources\images\tab-bar\default-scroll-top.png" />
+    <Content Include="Extjs\resources\images\tab-bar\tab-bar-default-bottom-bg.gif" />
+    <Content Include="Extjs\resources\images\tab-bar\tab-bar-default-left-bg.gif" />
+    <Content Include="Extjs\resources\images\tab-bar\tab-bar-default-right-bg.gif" />
+    <Content Include="Extjs\resources\images\tab-bar\tab-bar-default-top-bg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-active-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-active-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-active-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-disabled-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-disabled-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-disabled-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-focus-active-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-focus-active-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-focus-active-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-focus-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-focus-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-focus-over-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-focus-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-focus-over-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-focus-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-over-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-over-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-bottom-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-close.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-close.png" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-active-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-active-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-active-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-disabled-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-disabled-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-disabled-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-focus-active-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-focus-active-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-focus-active-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-focus-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-focus-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-focus-over-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-focus-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-focus-over-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-focus-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-over-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-over-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-left-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-active-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-active-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-active-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-disabled-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-disabled-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-disabled-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-focus-active-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-focus-active-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-focus-active-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-focus-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-focus-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-focus-over-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-focus-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-focus-over-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-focus-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-over-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-over-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-right-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-active-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-active-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-active-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-disabled-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-disabled-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-disabled-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-focus-active-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-focus-active-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-focus-active-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-focus-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-focus-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-focus-over-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-focus-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-focus-over-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-focus-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-over-corners.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-over-fbg.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-over-sides.gif" />
+    <Content Include="Extjs\resources\images\tab\tab-default-top-sides.gif" />
+    <Content Include="Extjs\resources\images\tip\tip-default-corners.gif" />
+    <Content Include="Extjs\resources\images\tip\tip-default-sides.gif" />
+    <Content Include="Extjs\resources\images\tip\tip-form-invalid-corners.gif" />
+    <Content Include="Extjs\resources\images\tip\tip-form-invalid-sides.gif" />
+    <Content Include="Extjs\resources\images\toolbar\default-more-left.gif" />
+    <Content Include="Extjs\resources\images\toolbar\default-more-left.png" />
+    <Content Include="Extjs\resources\images\toolbar\default-more.gif" />
+    <Content Include="Extjs\resources\images\toolbar\default-more.png" />
+    <Content Include="Extjs\resources\images\toolbar\default-scroll-bottom.gif" />
+    <Content Include="Extjs\resources\images\toolbar\default-scroll-bottom.png" />
+    <Content Include="Extjs\resources\images\toolbar\default-scroll-left.gif" />
+    <Content Include="Extjs\resources\images\toolbar\default-scroll-left.png" />
+    <Content Include="Extjs\resources\images\toolbar\default-scroll-right.gif" />
+    <Content Include="Extjs\resources\images\toolbar\default-scroll-right.png" />
+    <Content Include="Extjs\resources\images\toolbar\default-scroll-top.gif" />
+    <Content Include="Extjs\resources\images\toolbar\default-scroll-top.png" />
+    <Content Include="Extjs\resources\images\toolbar\footer-more-left.gif" />
+    <Content Include="Extjs\resources\images\toolbar\footer-more-left.png" />
+    <Content Include="Extjs\resources\images\toolbar\footer-more.gif" />
+    <Content Include="Extjs\resources\images\toolbar\footer-more.png" />
+    <Content Include="Extjs\resources\images\toolbar\footer-scroll-left.gif" />
+    <Content Include="Extjs\resources\images\toolbar\footer-scroll-left.png" />
+    <Content Include="Extjs\resources\images\toolbar\footer-scroll-right.gif" />
+    <Content Include="Extjs\resources\images\toolbar\footer-scroll-right.png" />
+    <Content Include="Extjs\resources\images\toolbar\toolbar-default-bg.gif" />
+    <Content Include="Extjs\resources\images\tools\tool-sprite-tpl.gif" />
+    <Content Include="Extjs\resources\images\tools\tool-sprites-dark.png" />
+    <Content Include="Extjs\resources\images\tools\tool-sprites.gif" />
+    <Content Include="Extjs\resources\images\tools\tool-sprites.png" />
+    <Content Include="Extjs\resources\images\tools\tools-sprites-trans.gif" />
+    <Content Include="Extjs\resources\images\tree\arrows-rtl.gif" />
+    <Content Include="Extjs\resources\images\tree\arrows-rtl.png" />
+    <Content Include="Extjs\resources\images\tree\arrows.gif" />
+    <Content Include="Extjs\resources\images\tree\arrows.png" />
+    <Content Include="Extjs\resources\images\tree\drop-above.gif" />
+    <Content Include="Extjs\resources\images\tree\drop-above.png" />
+    <Content Include="Extjs\resources\images\tree\drop-add.gif" />
+    <Content Include="Extjs\resources\images\tree\drop-add.png" />
+    <Content Include="Extjs\resources\images\tree\drop-append.gif" />
+    <Content Include="Extjs\resources\images\tree\drop-append.png" />
+    <Content Include="Extjs\resources\images\tree\drop-below.gif" />
+    <Content Include="Extjs\resources\images\tree\drop-below.png" />
+    <Content Include="Extjs\resources\images\tree\drop-between.gif" />
+    <Content Include="Extjs\resources\images\tree\drop-between.png" />
+    <Content Include="Extjs\resources\images\tree\drop-no.gif" />
+    <Content Include="Extjs\resources\images\tree\drop-no.png" />
+    <Content Include="Extjs\resources\images\tree\drop-over.gif" />
+    <Content Include="Extjs\resources\images\tree\drop-over.png" />
+    <Content Include="Extjs\resources\images\tree\drop-under.gif" />
+    <Content Include="Extjs\resources\images\tree\drop-under.png" />
+    <Content Include="Extjs\resources\images\tree\drop-yes.gif" />
+    <Content Include="Extjs\resources\images\tree\drop-yes.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-end-minus-rtl.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-end-minus-rtl.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-end-minus.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-end-minus.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-end-plus-rtl.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-end-plus-rtl.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-end-plus.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-end-plus.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-end-rtl.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-end-rtl.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-end.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-end.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-line-rtl.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-line-rtl.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-line.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-line.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-minus-nl-rtl.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-minus-nl-rtl.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-minus-nl.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-minus-nl.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-minus-rtl.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-minus-rtl.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-minus.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-minus.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-plus-nl-rtl.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-plus-nl-rtl.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-plus-nl.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-plus-nl.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-plus-rtl.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-plus-rtl.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-plus.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-plus.png" />
+    <Content Include="Extjs\resources\images\tree\elbow-rtl.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow-rtl.png" />
+    <Content Include="Extjs\resources\images\tree\elbow.gif" />
+    <Content Include="Extjs\resources\images\tree\elbow.png" />
+    <Content Include="Extjs\resources\images\tree\folder-open-rtl.gif" />
+    <Content Include="Extjs\resources\images\tree\folder-open-rtl.png" />
+    <Content Include="Extjs\resources\images\tree\folder-open.gif" />
+    <Content Include="Extjs\resources\images\tree\folder-open.png" />
+    <Content Include="Extjs\resources\images\tree\folder-rtl.gif" />
+    <Content Include="Extjs\resources\images\tree\folder-rtl.png" />
+    <Content Include="Extjs\resources\images\tree\folder.gif" />
+    <Content Include="Extjs\resources\images\tree\folder.png" />
+    <Content Include="Extjs\resources\images\tree\leaf-rtl.gif" />
+    <Content Include="Extjs\resources\images\tree\leaf-rtl.png" />
+    <Content Include="Extjs\resources\images\tree\leaf.gif" />
+    <Content Include="Extjs\resources\images\tree\leaf.png" />
+    <Content Include="Extjs\resources\images\tree\leaf1.gif" />
+    <Content Include="Extjs\resources\images\tree\loading.gif" />
+    <Content Include="Extjs\resources\images\tree\s.gif" />
+    <Content Include="Extjs\resources\images\util\splitter\mini-bottom.gif" />
+    <Content Include="Extjs\resources\images\util\splitter\mini-bottom.png" />
+    <Content Include="Extjs\resources\images\util\splitter\mini-left.gif" />
+    <Content Include="Extjs\resources\images\util\splitter\mini-left.png" />
+    <Content Include="Extjs\resources\images\util\splitter\mini-right.gif" />
+    <Content Include="Extjs\resources\images\util\splitter\mini-right.png" />
+    <Content Include="Extjs\resources\images\util\splitter\mini-top.gif" />
+    <Content Include="Extjs\resources\images\util\splitter\mini-top.png" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-bottom-corners.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-bottom-sides.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-collapsed-bottom-corners.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-collapsed-bottom-sides.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-collapsed-left-corners-rtl.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-collapsed-left-corners.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-collapsed-left-sides.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-collapsed-right-corners-rtl.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-collapsed-right-corners.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-collapsed-right-sides.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-collapsed-top-corners.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-collapsed-top-sides.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-left-corners-rtl.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-left-corners.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-left-sides.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-right-corners-rtl.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-right-corners.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-right-sides.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-top-corners.gif" />
+    <Content Include="Extjs\resources\images\window-header\window-header-default-top-sides.gif" />
+    <Content Include="Extjs\resources\images\window\toast\fade-blue.png" />
+    <Content Include="Extjs\resources\images\window\toast\fader.png" />
+    <Content Include="Extjs\resources\images\window\toast\icon16_error.png" />
+    <Content Include="Extjs\resources\images\window\toast\icon16_info.png" />
+    <Content Include="Extjs\resources\images\window\window-default-corners.gif" />
+    <Content Include="Extjs\resources\images\window\window-default-sides.gif" />
+    <Content Include="Extjs\resources\theme-classic-all-debug.css" />
+    <Content Include="Extjs\resources\theme-classic-all-debug_1.css" />
+    <Content Include="Extjs\resources\theme-classic-all-debug_2.css" />
+    <Content Include="Extjs\resources\theme-classic-all-rtl-debug.css" />
+    <Content Include="Extjs\resources\theme-classic-all-rtl-debug_1.css" />
+    <Content Include="Extjs\resources\theme-classic-all-rtl-debug_2.css" />
+    <Content Include="Extjs\resources\theme-classic-all-rtl.css" />
+    <Content Include="Extjs\resources\theme-classic-all-rtl_1.css" />
+    <Content Include="Extjs\resources\theme-classic-all-rtl_2.css" />
+    <Content Include="Extjs\resources\theme-classic-all.css" />
+    <Content Include="Extjs\resources\theme-classic-all_1.css" />
+    <Content Include="Extjs\resources\theme-classic-all_2.css" />
+    <Content Include="Extjs\resources\theme-crisp-all-debug.css" />
+    <Content Include="Extjs\resources\theme-crisp-all-debug_1.css" />
+    <Content Include="Extjs\resources\theme-crisp-all-debug_2.css" />
+    <Content Include="Extjs\resources\theme-crisp-all-rtl-debug.css" />
+    <Content Include="Extjs\resources\theme-crisp-all-rtl-debug_1.css" />
+    <Content Include="Extjs\resources\theme-crisp-all-rtl-debug_2.css" />
+    <Content Include="Extjs\resources\theme-crisp-all-rtl.css" />
+    <Content Include="Extjs\resources\theme-crisp-all-rtl_1.css" />
+    <Content Include="Extjs\resources\theme-crisp-all-rtl_2.css" />
+    <Content Include="Extjs\resources\theme-crisp-all.css" />
+    <Content Include="Extjs\resources\theme-crisp-all_1.css" />
+    <Content Include="Extjs\resources\theme-crisp-all_2.css" />
+    <Content Include="Extjs\resources\theme-neptune\images\breadcrumb\default-arrow-open-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\breadcrumb\default-arrow-open.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\breadcrumb\default-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\breadcrumb\default-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\breadcrumb\default-scroll-left.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\breadcrumb\default-scroll-right.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\breadcrumb\default-split-arrow-open-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\breadcrumb\default-split-arrow-open.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\breadcrumb\default-split-arrow-over-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\breadcrumb\default-split-arrow-over.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\breadcrumb\default-split-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\breadcrumb\default-split-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-large-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-large-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-large-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-large-s-arrow-b.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-large-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-large-s-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-medium-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-medium-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-medium-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-medium-s-arrow-b.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-medium-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-medium-s-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-small-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-small-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-small-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-small-s-arrow-b.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-small-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-small-s-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-large-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-large-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-large-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-large-s-arrow-b.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-large-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-large-s-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-medium-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-medium-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-medium-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-medium-s-arrow-b.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-medium-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-medium-s-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-small-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-small-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-small-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-small-s-arrow-b.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-small-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\default-toolbar-small-s-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\grid-cell-small-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\grid-cell-small-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\grid-cell-small-s-arrow-b.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\grid-cell-small-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\grid-cell-small-s-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-large-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-large-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-large-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-large-s-arrow-b.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-large-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-large-s-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-medium-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-medium-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-medium-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-medium-s-arrow-b.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-medium-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-medium-s-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-small-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-small-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-small-s-arrow-b-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-small-s-arrow-b.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-small-s-arrow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\button\plain-toolbar-small-s-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\datepicker\arrow-left.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\datepicker\arrow-right.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\datepicker\month-arrow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\dd\drop-add.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\dd\drop-no.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\dd\drop-yes.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\editor\tb-sprite.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\fieldset\collapse-tool.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\form\checkbox.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\form\clear-trigger-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\form\clear-trigger.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\form\date-trigger-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\form\date-trigger.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\form\exclamation.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\form\radio.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\form\search-trigger-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\form\search-trigger.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\form\spinner-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\form\spinner.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\form\tag-field-item-close.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\form\trigger-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\form\trigger.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\col-move-bottom.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\col-move-top.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\columns.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\dd-insert-arrow-left.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\dd-insert-arrow-right.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\dirty-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\dirty.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\drop-no.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\drop-yes.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\filters\equals.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\filters\find.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\filters\greater_than.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\filters\less_than.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\group-by.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\group-collapse.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\group-expand.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\hd-pop.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\hmenu-asc.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\hmenu-desc.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\hmenu-lock.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\hmenu-unlock.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\loading.gif" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\page-first.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\page-last.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\page-next.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\page-prev.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\pick-button.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\refresh.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\sort_asc.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\grid\sort_desc.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\loadmask\loading.gif" />
+    <Content Include="Extjs\resources\theme-neptune\images\menu\default-checked.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\menu\default-group-checked.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\menu\default-menu-parent-left.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\menu\default-menu-parent.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\menu\default-menubar-menu-parent.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\menu\default-scroll-bottom.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\menu\default-scroll-top.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\menu\default-unchecked.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\shared\icon-error.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\shared\icon-info.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\shared\icon-question.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\shared\icon-warning.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\sizer\e-handle.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\sizer\ne-handle.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\sizer\nw-handle.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\sizer\s-handle.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\sizer\se-handle.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\sizer\sw-handle.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\slider\slider-bg.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\slider\slider-thumb.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\slider\slider-v-bg.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\slider\slider-v-thumb.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tab-bar\default-more-left.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tab-bar\default-more.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tab-bar\default-plain-more-left.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tab-bar\default-plain-more.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tab-bar\default-plain-scroll-bottom.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tab-bar\default-plain-scroll-left.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tab-bar\default-plain-scroll-right.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tab-bar\default-plain-scroll-top.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tab-bar\default-scroll-bottom.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tab-bar\default-scroll-left.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tab-bar\default-scroll-right.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tab-bar\default-scroll-top.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tab\tab-default-close.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\toolbar\default-more-left.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\toolbar\default-more.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\toolbar\default-scroll-bottom.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\toolbar\default-scroll-left.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\toolbar\default-scroll-right.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\toolbar\default-scroll-top.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\toolbar\footer-more-left.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\toolbar\footer-more.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\toolbar\footer-scroll-left.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\toolbar\footer-scroll-right.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tools\tool-sprites-dark.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tools\tool-sprites.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\arrows-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\arrows.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\drop-above.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\drop-add.gif" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\drop-add.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\drop-append.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\drop-below.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\drop-between.gif" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\drop-between.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\drop-no.gif" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\drop-no.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\drop-over.gif" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\drop-over.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\drop-under.gif" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\drop-under.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\drop-yes.gif" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\drop-yes.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-end-minus-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-end-minus.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-end-plus-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-end-plus.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-end-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-end.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-line-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-line.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-minus-nl-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-minus-nl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-minus-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-minus.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-plus-nl-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-plus-nl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-plus-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-plus.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\elbow.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\folder-open-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\folder-open.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\folder-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\folder.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\leaf-rtl.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\leaf.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\tree\loading.gif" />
+    <Content Include="Extjs\resources\theme-neptune\images\util\splitter\mini-bottom.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\util\splitter\mini-left.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\util\splitter\mini-right.png" />
+    <Content Include="Extjs\resources\theme-neptune\images\util\splitter\mini-top.png" />
+    <Content Include="Extjs\resources\theme-neutral\images\magnify.png" />
+    <Content Include="Extjs\resources\theme-neutral\images\window\toast\fade-blue.png" />
+    <Content Include="Extjs\resources\theme-neutral\images\window\toast\fader.png" />
+    <Content Include="Extjs\resources\theme-neutral\images\window\toast\icon16_error.png" />
+    <Content Include="Extjs\resources\theme-neutral\images\window\toast\icon16_info.png" />
+    <Content Include="Extjs\theme-classic-debug.js" />
+    <Content Include="Extjs\theme-classic.js" />
+    <Content Include="Extjs\theme-crisp-debug.js" />
+    <Content Include="Extjs\theme-crisp.js" />
+    <Content Include="Extjs\ux\classic\resources\images\colorpick\checkerboard.png" />
+    <Content Include="Extjs\ux\classic\resources\images\colorpick\drag_circle.png" />
+    <Content Include="Extjs\ux\classic\resources\images\colorpick\huegradient.png" />
+    <Content Include="Extjs\ux\classic\resources\images\colorpick\map_gradient.png" />
+    <Content Include="Extjs\ux\classic\resources\images\colorpick\pickerslider.png" />
+    <Content Include="Extjs\ux\classic\resources\images\explorer\leaf.png" />
+    <Content Include="Extjs\ux\classic\resources\images\explorer\node.png" />
+    <Content Include="Extjs\ux\classic\resources\images\grouptabpanel\corners.gif" />
+    <Content Include="Extjs\ux\classic\resources\images\grouptabpanel\minus.gif" />
+    <Content Include="Extjs\ux\classic\resources\images\grouptabpanel\plus.gif" />
+    <Content Include="Extjs\ux\classic\resources\images\itemselector\bottom.gif" />
+    <Content Include="Extjs\ux\classic\resources\images\itemselector\down.gif" />
+    <Content Include="Extjs\ux\classic\resources\images\itemselector\left.gif" />
+    <Content Include="Extjs\ux\classic\resources\images\itemselector\right.gif" />
+    <Content Include="Extjs\ux\classic\resources\images\itemselector\top.gif" />
+    <Content Include="Extjs\ux\classic\resources\images\itemselector\up.gif" />
+    <Content Include="Extjs\ux\classic\resources\images\statusbar\accept.png" />
+    <Content Include="Extjs\ux\classic\resources\images\statusbar\exclamation.gif" />
+    <Content Include="Extjs\ux\classic\resources\images\statusbar\loading.gif" />
+    <Content Include="Extjs\ux\classic\resources\images\tabscrollermenu\menu.gif" />
+    <Content Include="Extjs\ux\classic\resources\ux-all-debug.css" />
+    <Content Include="Extjs\ux\classic\resources\ux-all-rtl-debug.css" />
+    <Content Include="Extjs\ux\classic\resources\ux-all-rtl.css" />
+    <Content Include="Extjs\ux\classic\resources\ux-all.css" />
+    <Content Include="Extjs\ux\ux.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Extjs\resources\ext\ext-watermark\fonts\ext-watermark.eot" />
+    <Content Include="Extjs\resources\ext\ext-watermark\fonts\ext-watermark.ttf" />
+    <Content Include="Extjs\resources\ext\ext-watermark\fonts\ext-watermark.woff" />
+    <Content Include="Extjs\resources\ext\ext-watermark\selection.json" />
+    <Content Include="Extjs\resources\Readme.md" />
+    <Content Include="Extjs\resources\theme-base\Readme.md" />
+    <Content Include="Extjs\resources\theme-neptune\Readme.md" />
+    <Content Include="Extjs\resources\theme-neutral\Readme.md" />
+    <Content Include="Extjs\ux\classic\config.rb" />
+    <Content Include="Extjs\ux\classic\resources\Readme.md" />
+    <Content Include="Extjs\ux\classic\ux-all-debug.scss" />
+    <Content Include="Extjs\ux\classic\ux-all-rtl-debug.scss" />
+    <Content Include="xf\Application.js" />
+    <Content Include="xf\component\grid\DataGrid.js" />
+    <Content Include="xf\data\Proxy.js" />
+    <Content Include="xf\data\Store.js" />
+    <Content Include="xf\model\CheckboxTreeModel.js" />
+    <Content Include="xf\model\TreeModel.js" />
+    <Content Include="xf\view\MainView.js" />
+    <Content Include="xf\view\MainViewCtr.js" />
+    <Content Include="xf\view\MainViewModel.js" />
+    <Content Include="Data\Menu.json" />
+    <Content Include="Areas\Sys\Views\web.config" />
+    <Content Include="xf\view\MainViewTree.js" />
+    <Content Include="Config\log4net.config" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Sys\Models\" />
+    <Folder Include="Areas\Sys\Views\Company\" />
+    <Folder Include="Areas\Sys\Views\Menu\" />
+    <Folder Include="Areas\Sys\Views\Shared\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\My\" />
+    <Folder Include="xf\utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Yanjun.VNext.Framework.Code\Yanjun.VNext.Framework.Code.csproj">
+      <Project>{db24b7af-ac58-4bb2-a95e-730bd4afb243}</Project>
+      <Name>Yanjun.VNext.Framework.Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yanjun.VNext.Framework.Data\Yanjun.VNext.Framework.Data.csproj">
+      <Project>{82fbae67-4cd9-4d01-9acd-a8f75e35cde2}</Project>
+      <Name>Yanjun.VNext.Framework.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yanjun.VNext.Framework.Domain\Yanjun.VNext.Framework.Domain.csproj">
+      <Project>{38034539-e389-46c2-9852-d657fe3e325c}</Project>
+      <Name>Yanjun.VNext.Framework.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yanjun.VNext.Framework.Service\Yanjun.VNext.Framework.Service.csproj">
+      <Project>{c647c978-3ec8-4873-8600-6342aa84805a}</Project>
+      <Name>Yanjun.VNext.Framework.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61399</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61399/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

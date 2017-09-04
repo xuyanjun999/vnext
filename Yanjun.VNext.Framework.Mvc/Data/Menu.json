@@ -1,0 +1,26 @@
+﻿[
+  {
+    "ID": 1,
+    "Text": "系统设置",
+    "Leaf": false
+  },
+  {
+    "ID": 2,
+    "Text": "菜单管理",
+    "Leaf": true,
+    "ParentID": 1
+  },
+  {
+    "ID": 3,
+    "Text": "组织架构",
+    "Leaf": false,
+    "ParentID": 1
+  },
+  {
+    "ID": 4,
+    "Text": "公司管理",
+    "Leaf": true,
+    "ParentID": 3,
+    "Url": "xf.view.org.Company"
+  }
+]
