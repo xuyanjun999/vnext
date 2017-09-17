@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div id="datagrid1" class="mini-datagrid" style="width:100%;height:100%;"
+         url="/Sys/Company/Read" idField="ID" allowResize="true" multiSelect="true" onlyCheckSelection="true">
+        <div property="columns">
+            <div type="indexcolumn"></div>
+            <div type="checkcolumn"></div>    
+            <div field="Code" width="120" headerAlign="center" allowSort="true">编号</div>
+            <div field="Name" width="120" headerAlign="center" allowSort="true">名称</div>
+            <div field="Address" width="100" renderer="onGenderRenderer" align="center" headerAlign="center">地址</div>
+            <div field="salary" width="100" allowSort="true">薪资</div>
+            <div field="age" width="100" allowSort="true">年龄</div>
+            <div field="createtime" width="100" headerAlign="center" dateFormat="yyyy-MM-dd" allowSort="true">创建日期</div>
+        </div>
+    </div> 
+    <script type="text/javascript">
+        mini.parse();
+        var grid = mini.get("datagrid1");
+        grid.load();
+    </script>
+</body>
+</html>

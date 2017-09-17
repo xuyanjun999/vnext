@@ -1,5 +1,5 @@
 ﻿Ext.define("xf.core.data.Proxy", {
-    extend: 'Ext.data.proxy.Ajax',
+    extend: 'Ext.data.proxy.Rest',
     alias: 'proxy.xf-proxy',
     config: {
         paramsAsJson: true,
@@ -23,5 +23,7 @@
             totalProperty: 'Count'
         }
     },
-
+    encodeFilters: function (filters) {
+        return this.callParent([filters]);
+    }
 })

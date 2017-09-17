@@ -10,6 +10,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Yanjun.VNext.Framework.Data.Util;
 
 namespace Yanjun.VNext.Framework.Data.DBContext
 {
@@ -23,7 +24,7 @@ namespace Yanjun.VNext.Framework.Data.DBContext
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             string currentPath = Assembly.GetExecutingAssembly().CodeBase;
-            string assembleFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "bin","Yanjun.VNext.Framework.Mapping.dll");
+            string assembleFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "bin","Yanjun.VNext.Framework.Map.dll");
             Assembly asm = Assembly.LoadFile(assembleFileName);
             modelBuilder.Configurations.AddFromAssembly(asm);
             base.OnModelCreating(modelBuilder);
@@ -68,8 +69,23 @@ namespace Yanjun.VNext.Framework.Data.DBContext
         {
             EntitySetBase es = GetEntitySet(type);
 
+            if (DbUtil.IsSqlServer())
+            {
+                return String.Format("[{0}].[{1}]", es.Schema, es.Table);
+            }
+            else if (DbUtil.IsMySql())
+            {
+                return String.Format("{0}", es.Table);
+            }
+            else
+            {
+                return string.Empty;
+            }
+
+
+
             //if you are using EF6
-            return String.Format("[{0}].[{1}]", es.Schema, es.Table);
+            //return String.Format("[{0}].[{1}]", es.Schema, es.Table);
 
             //if you have a version prior to EF6
             //return string.Format( "[{0}].[{1}]", 

@@ -1,7 +1,20 @@
-﻿@{
-    ViewBag.Title = "About";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-
-<p>Use this area to provide additional information.</p>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title> Hello MiniUI!</title>
+    <!--jQuery js-->
+    <link href="~/MiniUi/scripts/js/miniui/themes/default/miniui.css" rel="stylesheet" />
+    <link href="~/MiniUi/scripts/js/miniui/themes/icons.css" rel="stylesheet" />
+    <script src="~/MiniUi/scripts/js/jquery-1.6.2.min.js"></script>
+    <script src="~/MiniUi/scripts/js/miniui/miniui.js"></script>
+</head>
+<body>
+    <input id="helloBtn" class="mini-button" text="Hello" onclick="onHelloClick" />
+    <script type="text/javascript">
+        function onHelloClick(e) {
+            var button = e.sender;
+            mini.alert("Hello MiniUI!");
+        }
+    </script>
+</body>
+</html>

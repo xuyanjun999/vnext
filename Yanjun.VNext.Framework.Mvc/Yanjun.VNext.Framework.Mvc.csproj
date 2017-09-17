@@ -1268,10 +1268,12 @@
     <Content Include="Extjs\ux\classic\ux-all-rtl-debug.scss" />
     <Content Include="xf\Application.js" />
     <Content Include="xf\component\grid\DataGrid.js" />
+    <Content Include="xf\component\grid\DataGridCtr.js" />
     <Content Include="xf\data\Proxy.js" />
     <Content Include="xf\data\Store.js" />
     <Content Include="xf\model\CheckboxTreeModel.js" />
     <Content Include="xf\model\TreeModel.js" />
+    <Content Include="xf\utils\Utils.js" />
     <Content Include="xf\view\MainView.js" />
     <Content Include="xf\view\MainViewCtr.js" />
     <Content Include="xf\view\MainViewModel.js" />
@@ -1279,6 +1281,7 @@
     <Content Include="Areas\Sys\Views\web.config" />
     <Content Include="xf\view\MainViewTree.js" />
     <Content Include="Config\log4net.config" />
+    <Content Include="Areas\Sys\Views\Company\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1306,16 +1309,15 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Main.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Sys\Models\" />
-    <Folder Include="Areas\Sys\Views\Company\" />
     <Folder Include="Areas\Sys\Views\Menu\" />
     <Folder Include="Areas\Sys\Views\Shared\" />
     <Folder Include="Models\" />
     <Folder Include="Views\My\" />
-    <Folder Include="xf\utils\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

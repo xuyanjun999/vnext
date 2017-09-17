@@ -16,10 +16,32 @@
 
     beforeload: function (store, operation, eOpts) {
 
+        var filters = [];
+        var operationFilters = operation._filters;
+        //
+        if (!Ext.isEmpty(operationFilters)) {
+            operationFiltersStr = store.getProxy().encodeFilters(operationFilters);
+            var operationFiltersJson = Ext.decode(operationFiltersStr);
+            operationFiltersJson = xf.utils.encodeFilters(operationFiltersJson);
+            filters = Ext.Array.merge(filters, operationFiltersJson);
+        }
+
+        if (!Ext.isEmpty(this.defaultFilter)) {
+            var dFilter = xf.utils.encodeFilters(this.defaultFilter);
+            filters = Ext.Array.merge(filters, dFilter);
+        }
+
+        if (!Ext.isEmpty(this.customFilter)) {
+            var cFilter = xf.utils.encodeFilters(this.customFilter);
+            filters = Ext.Array.merge(filters, cFilter);
+        }
+
         operation.setParams({
-            include: this.include
+            include: this.include,
+            filter: filters
         });
 
+        delete operation._filters;
 
         //加过滤
 
