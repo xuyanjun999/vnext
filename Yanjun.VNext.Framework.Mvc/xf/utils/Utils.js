@@ -232,11 +232,36 @@ Ext.define('xf.core.utils.Utils', {
                 operator: xf.utils.getOperator(item.operator),
                 fieldName: item.fieldName || item.property,
                 searchGroupID: item.group || item.groupId || item.SearchGroupID,
-                values: item.values||(Ext.isArray(item.value) ? item.value : [item.value]),
+                values: item.values || (Ext.isArray(item.value) ? item.value : [item.value]),
                 rel: item.rel === "or" ? 2 : 1
             };
             return obj;
         });
+        return result;
+    },
+
+    getActionButton: function (code) {
+        var result = {
+           // xtype: 'button',
+
+        };
+        switch (code) {
+            case "add":
+                result.iconCls = "add";
+                result.text = "新建";
+                result.action = "add";
+                break;
+            case "edit":
+                result.iconCls = "edit";
+                result.text = "编辑";
+                result.action = "edit";
+                break;
+            case "delete":
+                result.iconCls = "delete";
+                result.text = "删除";
+                result.action = "delete";
+                break;
+        }
         return result;
     }
 

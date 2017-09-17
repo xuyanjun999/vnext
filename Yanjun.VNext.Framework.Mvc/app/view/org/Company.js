@@ -3,17 +3,12 @@
     title: '公司管理',
     layout: 'fit',
     border: false,
+    closable: true,
     items: [{
         xtype: 'xf-grid',
-        store: {
-            type: 'xf-store',
-            model: 'xf.model.org.Company',
-            url: '/company',
-            defaultFilter: [{
-                fieldName: 'Code',
-                operator: 'like',
-                values: ["123"]
-            }]
-        }
+        model: 'xf.model.org.Company',
+        api: 'company',
+        defaultFilter: [{ fieldName: 'Name', operator: 'like', value: '杭州' }],
+        tbar:["add","edit","delete"]
     }]
 });

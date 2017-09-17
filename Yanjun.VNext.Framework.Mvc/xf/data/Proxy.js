@@ -9,6 +9,12 @@
             update: 'POST',
             destroy: 'POST'
         },
+        api: {
+            create: 'create',
+            read: 'read',
+            update: 'update',
+            destroy: 'delete'
+        },
         filterParam: 'Filter',
         limitParam: 'Limit',
         pageParam: 'Page',

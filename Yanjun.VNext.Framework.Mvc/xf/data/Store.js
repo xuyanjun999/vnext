@@ -11,11 +11,11 @@
         defaultFilter: null,
         //临时过滤
         customFilter: null,
-        url: null
+        api: null
     },
 
     beforeload: function (store, operation, eOpts) {
-
+        console.log("123");
         var filters = [];
         var operationFilters = operation._filters;
         //
@@ -53,7 +53,9 @@
         if (!config.proxy) {
             config.proxy = {
                 type: 'xf-proxy',
-                url: config.url
+                api: {
+                    read: config.api+"/read"
+                }
             }
         }
 

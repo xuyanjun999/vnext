@@ -42,8 +42,16 @@
     },
 
     makeTBar: function () {
+        debugger
         var me = this;
         if (!me.tbar) me.tbar = [];
+        me.tbar = me.tbar.map(function (item) {
+            var r = item;
+            if (Ext.isString(item)) {
+                r = xf.utils.getActionButton(item);
+            }
+            return r;
+        });
         me.tbar.push("->");
         me.tbar.push({
             xtype: 'textfield',
@@ -129,7 +137,7 @@
                     text: item.text,
                     hidden: item.name === "ID",
                     filter: {
-                        type:'string'
+                        type: 'string'
                     }
                 }
             });
@@ -146,7 +154,6 @@
     },
 
     beforeload: function (store, operation, eOpts) {
-        console.log("grid beforeload");
     },
 
     onRowDblClick: function (grid, record) {
@@ -160,6 +167,15 @@
     initComponent: function () {
 
         var me = this;
+
+        if (!me.store) {
+            me.store = {
+                type: 'xf-store',
+                model: me.model,
+                api: me.api,
+                defaultFilter: me.defaultFilter
+            }
+        }
 
         Ext.apply(this, this.makeGrid());
 

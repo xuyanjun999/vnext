@@ -9,9 +9,5 @@ namespace Yanjun.VNext.Framework.Mvc.Areas.Sys.Controllers
 {
     public class CompanyController : MyController<CompanyEntity>
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
     }
 }
