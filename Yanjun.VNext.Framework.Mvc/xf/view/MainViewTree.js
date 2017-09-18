@@ -3,6 +3,9 @@
     xtype: 'xf-mainviewtree',
     minWidth: 200,
     width: 250,
+    split: {
+        width:1
+    },
     collapsible: true,
     useArrows: true,
     border: false,
@@ -13,8 +16,21 @@
     store: {
         model:'xf.core.model.TreeModel',
         proxy: {
-            type: 'xf-proxy',
-            url:'/menu/getMainMenu'
+            paramsAsJson: true,
+            actionMethods: {
+                create: 'POST',
+                read: 'POST',
+                update: 'POST',
+                destroy: 'POST'
+            },
+            type: 'ajax',
+            url: '/menu/GetMainMenu',
+            reader: {
+                type: 'json',
+                rootProperty: 'Entitys',
+                successProperty: 'Success',
+                totalProperty: 'Count'
+            }
         }
     }
 });

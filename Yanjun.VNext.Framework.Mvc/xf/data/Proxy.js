@@ -1,5 +1,5 @@
 ﻿Ext.define("xf.core.data.Proxy", {
-    extend: 'Ext.data.proxy.Ajax',
+    extend: 'Ext.data.proxy.Rest',
     alias: 'proxy.xf-proxy',
     config: {
         paramsAsJson: true,
@@ -8,6 +8,12 @@
             read: 'POST',
             update: 'POST',
             destroy: 'POST'
+        },
+        api: {
+            create: 'create',
+            read: 'read',
+            update: 'update',
+            destroy: 'delete'
         },
         filterParam: 'Filter',
         limitParam: 'Limit',
@@ -23,5 +29,7 @@
             totalProperty: 'Count'
         }
     },
-
+    encodeFilters: function (filters) {
+        return this.callParent([filters]);
+    }
 })

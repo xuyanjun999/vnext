@@ -3,7 +3,9 @@
     xtype: 'xf-grid',
     config: {
         rowediting: false,
+        columnFilter: true,
         showCheckbox: true,
+        showRowNumber: true
     },
 
     makePagingBar: function () {
@@ -29,13 +31,55 @@
                 }
             });
         }
+        if (this.columnFilter === true) {
+            plugins.push({
+                ptype: 'gridfilters',
+            });
+        }
 
         if (plugins) return plugins;
         return null;
     },
 
     makeTBar: function () {
-        return null;
+        debugger
+        var me = this;
+        if (!me.tbar) me.tbar = [];
+        me.tbar = me.tbar.map(function (item) {
+            var r = item;
+            if (Ext.isString(item)) {
+                r = xf.utils.getActionButton(item);
+            }
+            return r;
+        });
+        me.tbar.push("->");
+        me.tbar.push({
+            xtype: 'textfield',
+            emptyText: '输入条件进行快捷搜索',
+            triggers: {
+                search: {
+                    cls: 'x-form-search-trigger',
+                    handler: function () {
+                        me.fireEvent("quicksearch");
+                    }
+                },
+                clear: {
+                    cls: 'x-form-clear-trigger',
+                    handler: function () {
+                        me.getStore().clearFilter();
+                    }
+                }
+            },
+            keyMap: {
+                ENTER: {
+                    handler: function () {
+                        me.fireEvent("quicksearch");
+                    },
+                    scope: 'this',
+                }
+            }
+        });
+        return me.tbar;
     },
 
 
@@ -46,6 +90,7 @@
             //viewType: 'sef-datagrid-view',
             viewConfig: {
                 stripeRows: true,
+                enableTextSelection: true,
                 emptyText: "没有匹配的数据" //,//'没有数据' //SEF.G.Consts.TABLE_EMPTY_TEXT
             },
             plugins: this.makePlugins(),
@@ -90,26 +135,47 @@
                 return {
                     dataIndex: item.name,
                     text: item.text,
-
+                    hidden: item.name === "ID",
+                    filter: {
+                        type: 'string'
+                    }
                 }
             });
-
+            if (me.showRowNumber)
+                columns.unshift({
+                    xtype: 'rownumberer',
+                    text: '行号',
+                    width: 50,
+                    align: 'center'
+                });
             return columns;
         }
         return me.columns;
     },
 
     beforeload: function (store, operation, eOpts) {
-        console.log("grid beforeload");
     },
 
     onRowDblClick: function (grid, record) {
         console.log("grid rowdblclick");
     },
 
+    onQuickSearch: function () {
+        alert("快搜索啦");
+    },
+
     initComponent: function () {
 
         var me = this;
+
+        if (!me.store) {
+            me.store = {
+                type: 'xf-store',
+                model: me.model,
+                api: me.api,
+                defaultFilter: me.defaultFilter
+            }
+        }
 
         Ext.apply(this, this.makeGrid());
 
@@ -122,6 +188,8 @@
         }
 
         this.on('rowdblclick', me.onRowDblClick);
+
+        this.on("quicksearch", me.onQuickSearch);
 
     }
 

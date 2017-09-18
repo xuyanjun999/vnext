@@ -8,6 +8,7 @@
         xtype: 'container',
         items: [{
             xtype: 'toolbar',
+            border: false,
             height: 30,
             items: [{
                 xtype: 'tbtext',
@@ -38,6 +39,7 @@
         xtype: 'container',
         items: [{
             xtype: 'toolbar',
+            border: false,
             items: ['->', {
                 xtype: 'tbtext',
                 html: '',

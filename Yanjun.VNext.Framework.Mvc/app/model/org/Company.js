@@ -2,7 +2,7 @@
     extend: 'Ext.data.Model',
     fields: [{
         name: 'ID',
-        text: ''
+        text: 'ID'
     }, {
         name: 'Code',
         dtype: 'string',

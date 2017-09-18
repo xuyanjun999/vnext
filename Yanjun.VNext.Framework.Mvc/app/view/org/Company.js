@@ -2,12 +2,13 @@
     extend: 'Ext.panel.Panel',
     title: '公司管理',
     layout: 'fit',
+    border: false,
+    closable: true,
     items: [{
         xtype: 'xf-grid',
-        store: {
-            type: 'xf-store',
-            model: 'xf.model.org.Company',
-            url: '/company/read'
-        }
+        model: 'xf.model.org.Company',
+        api: 'company',
+        defaultFilter: [{ fieldName: 'Name', operator: 'like', value: '杭州' }],
+        tbar:["add","edit","delete"]
     }]
 });
