@@ -1,6 +1,7 @@
 ﻿Ext.define("xf.core.component.grid.DataGrid", {
     extend: 'Ext.grid.Panel',
     xtype: 'xf-grid',
+    controller:'xf-gridctr',
     config: {
         rowediting: false,
         columnFilter: true,

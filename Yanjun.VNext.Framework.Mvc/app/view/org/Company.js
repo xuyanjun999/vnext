@@ -9,6 +9,6 @@
         model: 'xf.model.org.Company',
         api: 'company',
         defaultFilter: [{ fieldName: 'Name', operator: 'like', value: '杭州' }],
-        tbar:["add","edit","delete"]
+        tbar: ["add", "edit", "delete"]
     }]
 });
