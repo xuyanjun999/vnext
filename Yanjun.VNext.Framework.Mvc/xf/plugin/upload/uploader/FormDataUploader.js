@@ -13,7 +13,7 @@ Ext.define('Ext.ux.upload.uploader.FormDataUploader', {
     xhr : null,
 
     initConnection: function () {
-        debugger
+        //debugger
         if (this.params) {
             this.url = Ext.urlAppend(this.url, Ext.urlEncode(this.params));
         }

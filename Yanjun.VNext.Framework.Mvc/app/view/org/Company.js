@@ -15,7 +15,7 @@
                 var uploadPanel = Ext.create('Ext.ux.upload.Panel', {
                     uploader: 'Ext.ux.upload.uploader.FormDataUploader',
                     uploaderOptions: {
-                        url: '/Sys/Menu/GetMainMenu'
+                        url: '/Sys/Menu/Upload'
                     },
                     synchronous: false
                 });

@@ -382,12 +382,12 @@ Ext.define('Ext.ux.upload.Panel', {
         this.queue.clearItems();
     },
 
-    onItemUploadSuccess : function(manager, item, info) {
-
+    onItemUploadSuccess: function (manager, item, info) {
+        //debugger
     },
 
     onItemUploadFailure : function(manager, item, info) {
-
+       // debugger
     },
 
     startUpload : function() {

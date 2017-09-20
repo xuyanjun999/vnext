@@ -18,5 +18,10 @@ namespace Yanjun.VNext.Framework.Mvc.Areas.Sys.Controllers
 
             return MyJson(new { Success = true, Entitys = objs.Where(x => x.ParentID == parentId) });
         }
+
+        public JsonResult Upload()
+        {
+            return MyJson(new { success = false, message = "错了啊" });
+        }
     }
 }
