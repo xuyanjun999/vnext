@@ -12,7 +12,6 @@ Ext.define('Ext.ux.upload.data.Connection', {
     progressCallback : null,
 
     request: function (options) {
-        debugger
         var progressCallback = options.progress;
         if (progressCallback) {
             this.progressCallback = progressCallback;

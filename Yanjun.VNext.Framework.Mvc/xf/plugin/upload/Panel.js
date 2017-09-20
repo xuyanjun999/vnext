@@ -304,8 +304,6 @@ Ext.define('Ext.ux.upload.Panel', {
     },
 
     onInitUpload: function () {
-        alert(1);
-        debugger
         if (!this.queue.getCount()) {
             return;
         }
