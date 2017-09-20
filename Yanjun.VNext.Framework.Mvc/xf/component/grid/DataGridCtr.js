@@ -48,6 +48,6 @@
 
 
     add_execute: function (btn) {
-        this.view.ownerCt.getLayout().
+        //this.view.ownerCt.getLayout().
     }
 });
