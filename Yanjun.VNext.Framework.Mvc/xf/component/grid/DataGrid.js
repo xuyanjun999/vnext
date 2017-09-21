@@ -1,7 +1,7 @@
 ﻿Ext.define("xf.core.component.grid.DataGrid", {
     extend: 'Ext.grid.Panel',
     xtype: 'xf-grid',
-    controller:'xf-gridctr',
+    controller: 'xf-gridctr',
     config: {
         rowediting: false,
         columnFilter: true,
@@ -21,7 +21,8 @@
     },
 
     makePlugins: function () {
-        var me = this, plugins = [];
+        var me = this;
+        var plugins = me.plugins||[];
         if (this.rowediting === true) {
             plugins.push({
                 ptype: 'rowediting',
@@ -38,12 +39,11 @@
             });
         }
 
-        if (plugins) return plugins;
-        return null;
+      return plugins;
     },
 
     makeTBar: function () {
-        debugger
+        
         var me = this;
         if (!me.tbar) me.tbar = [];
         me.tbar = me.tbar.map(function (item) {
