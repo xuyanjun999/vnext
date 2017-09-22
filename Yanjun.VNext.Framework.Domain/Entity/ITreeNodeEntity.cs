@@ -36,5 +36,8 @@ namespace Yanjun.VNext.Framework.Domain.Entity
         /// </summary>
         bool Expanded { get; set; }
 
+
+        object[] Children { get; set; }
+
     }
 }
