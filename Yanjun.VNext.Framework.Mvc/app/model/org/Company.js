@@ -1,5 +1,5 @@
 ﻿Ext.define('xf.model.org.Company', {
-    extend: 'Ext.data.Model',
+    extend: 'xf.core.model.ModelBase',
     fields: [{
         name: 'ID',
         text: 'ID'
@@ -37,6 +37,5 @@
         dtype: 'date',
         format: 'c',
         text: '更新时间'
-    }],
-    idProperty: 'ID'
+    }]
 });

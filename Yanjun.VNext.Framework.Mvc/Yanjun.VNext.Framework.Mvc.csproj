@@ -153,7 +153,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\MyController.cs" />
-    <Compile Include="Areas\Sys\Controllers\CompanyController.cs" />
+    <Compile Include="Areas\Org\OrgAreaRegistration.cs" />
+    <Compile Include="Areas\Org\Controllers\CompanyController.cs" />
     <Compile Include="Areas\Sys\Controllers\MenuController.cs" />
     <Compile Include="Areas\Sys\SysAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1285,6 +1286,7 @@
     <Content Include="xf\data\Proxy.js" />
     <Content Include="xf\data\Store.js" />
     <Content Include="xf\model\CheckboxTreeModel.js" />
+    <Content Include="xf\model\ModelBase.js" />
     <Content Include="xf\model\TreeModel.js" />
     <Content Include="xf\plugin\upload\BrowseButton.js" />
     <Content Include="xf\plugin\upload\css\upload.css" />
@@ -1327,6 +1329,7 @@
     <Content Include="xf\view\MainViewTree.js" />
     <Content Include="Config\log4net.config" />
     <Content Include="Areas\Sys\Views\Company\Index.cshtml" />
+    <Content Include="Areas\Org\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1358,6 +1361,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Org\Models\" />
+    <Folder Include="Areas\Org\Views\Shared\" />
     <Folder Include="Areas\Sys\Models\" />
     <Folder Include="Areas\Sys\Views\Menu\" />
     <Folder Include="Areas\Sys\Views\Shared\" />

@@ -16,7 +16,7 @@
     onActionButtonClick: function (btn) {
         var action = btn.action;
         this.onExecuteAction(action, btn);
-       
+
     },
 
     onExecuteAction: function (command, btn) {
@@ -49,5 +49,29 @@
 
     add_execute: function (btn) {
         //this.view.ownerCt.getLayout().
+    },
+
+    import_execute: function (btn) {
+        var uploadPanel = Ext.create('Ext.ux.upload.Panel', {
+            uploader: 'Ext.ux.upload.uploader.FormDataUploader',
+            uploaderOptions: {
+                url: btn.url
+            },
+            synchronous: false
+        });
+
+        var uploadDialog = Ext.create('Ext.ux.upload.Dialog', {
+            dialogTitle: 'My Upload Dialog',
+            panel: uploadPanel
+        });
+
+        this.mon(uploadDialog, 'uploadcomplete', function (uploadPanel, manager, items, errorCount) {
+           // this.uploadComplete(items);
+            if (!errorCount) {
+                uploadDialog.close();
+            }
+        }, this);
+
+        uploadDialog.show();
     }
 });

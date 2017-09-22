@@ -261,6 +261,11 @@ Ext.define('xf.core.utils.Utils', {
                 result.text = "删除";
                 result.action = "delete";
                 break;
+            case "import":
+                result.iconCls = "import";
+                result.text = "导入";
+                result.action = "import";
+                break;
         }
         return result;
     }

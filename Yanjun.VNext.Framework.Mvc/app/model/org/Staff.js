@@ -1,5 +1,5 @@
 ﻿Ext.define('xf.model.org.Staff', {
-    extend: 'Ext.data.Model',
+    extend: 'xf.core.model.ModelBase',
     fields: [{
         name: 'ID',
         text: 'ID'
