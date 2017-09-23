@@ -1,6 +1,6 @@
-﻿Ext.define("xf.core.data.Proxy", {
-    extend: 'Ext.data.proxy.Ajax',
-    alias: 'proxy.xf-proxy',
+﻿Ext.define("xf.core.data.ModelProxy", {
+    extend: 'Ext.data.proxy.Rest',
+    alias: 'proxy.xf-modelproxy',
     config: {
         paramsAsJson: true,
         actionMethods: {
@@ -27,9 +27,19 @@
             rootProperty: 'Entitys',
             successProperty: 'Success',
             totalProperty: 'Count'
+        },
+        writer: {
+            type:'xf-jsonwriter'
         }
     },
-    encodeFilters: function (filters) {
-        return this.callParent([filters]);
+    constructor: function (config) {
+        this.callParent([config]);
+        var me = this;
+        me.setApi({
+            create: me.url+"/create",
+            read: me.url + "/single",
+            update: me.url + "/update",
+            destroy: me.url + "/delete",
+        });
     }
 })

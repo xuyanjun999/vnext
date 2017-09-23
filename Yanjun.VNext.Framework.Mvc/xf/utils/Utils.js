@@ -242,7 +242,7 @@ Ext.define('xf.core.utils.Utils', {
 
     getActionButton: function (code) {
         var result = {
-           // xtype: 'button',
+            // xtype: 'button',
 
         };
         switch (code) {
@@ -266,9 +266,21 @@ Ext.define('xf.core.utils.Utils', {
                 result.text = "导入";
                 result.action = "import";
                 break;
+            case "save":
+                result.iconCls = "save";
+                result.text = "保存";
+                result.action = "save";
+                break;
+            case "back":
+                result.iconCls = "back";
+                result.text = "返回";
+                result.action = "back";
+                break;
         }
         return result;
-    }
+    },
+
+
 
 },
     function (cls) {

@@ -56,7 +56,7 @@ namespace Yanjun.VNext.Framework.Mvc.Areas
         public virtual JsonResult Update(T entity, string[] modified)
         {
             RestResponseDto res = new RestResponseDto();
-       ;
+            //var entity = Repository.QueryFirst<T>(x => x.ID == id);
             Repository.Update<T>(entity, modified);
             res.Entitys = new object[] { Repository.QueryFirst<T>(x => x.ID == entity.ID) };
             res.Success = true;

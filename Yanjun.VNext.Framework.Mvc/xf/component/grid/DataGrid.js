@@ -137,6 +137,9 @@
                     dataIndex: item.name,
                     text: item.text,
                     hidden: item.name === "ID",
+                    formatter: item.formatter,
+                    renderer: item.renderer,
+                    width: item.width||100,
                     filter: {
                         type: 'string'
                     }
