@@ -4,7 +4,7 @@
     items: [{
         xtype: 'panel',
         border: false,
-        closable: true,
+        closable: false,
         region: 'center',
         layout: 'card',
         items: [{
@@ -31,7 +31,7 @@
                 fieldLabel: '创建时间',
                 xtype: 'datefield',
                 name: 'CreateOn',
-
+                //submitFormat: 'Y-m-d H:i:s',
             }],
             tbar: ['save','back']
         }]

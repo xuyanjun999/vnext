@@ -32,7 +32,6 @@
         type: 'date',
         formatter: 'date("Y-m-d H:i:s")',
         width: 120,
-        //dateFormat:'Y-m-d',
         text: '创建时间'
     }, {
         name: 'UpdateOn',

@@ -280,7 +280,12 @@ Ext.define('xf.core.utils.Utils', {
         return result;
     },
 
-
+    getResponseObj: function (operation) {
+        
+        var responseText = operation.getResponse().responseText;
+        var responseObj = Ext.decode(responseText);
+        return responseObj;
+    }
 
 },
     function (cls) {

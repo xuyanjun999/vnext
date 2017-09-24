@@ -5,11 +5,14 @@ Ext.define('xf.core.data.JsonWriter',{
     alias:'writer.xf-jsonwriter',
     
     rootProperty:'Entity',
-
-   
+    dateFormat:'Y-m-d H:i:s',
+    getRecordData: function (record, operation) {
+        
+        return this.callParent(arguments);
+    },
 
     writeRecords: function(request, data){
-        //debugger;
+      
         //data=this._transform(data,request);
         
         var req=  this.callParent(arguments);

@@ -26,11 +26,13 @@
         var cmdHandlerName = command.toLowerCase() + '_execute';
         var fn = this.view[cmdHandlerName];
         if (Ext.isFunction(fn)) {
-            if (fn.call(this.view, btn) === false) return;
+            fn.call(this.view, btn);
+            return;
         }
         fn = this[cmdHandlerName];
         if (Ext.isFunction(fn)) {
-            if (fn.call(this, btn) === false) return;
+            fn.call(this, btn)
+            return;
         }
 
         cmdHandlerName = cmdHandlerName.replace(this.view.name.toLowerCase() + '_', '');
@@ -49,29 +51,41 @@
     back_execute: function (btn) {
         var form = this.view;
         form.ownerCt.getLayout().prev();
+        return false;
     },
 
     save_execute: function () {
         var form = this.view;
         if (!form.isValid())
-            return false;
+            return;
+
+        var d = form.getForm().findField("CreateOn").getValue();
+        console.log(d);
+        
         form.updateRecord();
         var record = form.getRecord();
 
+        d = form.getForm().findField("CreateOn").getValue();
+        console.log(d);
+
         if (!record.dirty) {
             xf.toast.error("数据未修改,不需要保存!");
+            return;
         }
-
+        console.log(record);
         record.save({
             failure: function (record, operation) {
-                // do something if the save failed
+                console.log(operation);
+                xf.message.error("保存失败!");
             },
             success: function (record, operation) {
                 if (operation.getRequest().getAction() == "create") {
                     form.store.insert(0, record);
                 }
-                console.log(record);
-                // do something if the save succeeded
+                var res = xf.utils.getResponseObj(operation);
+                console.log(res);
+                xf.toast.info("保存成功!" + (res.Message == null ? "" : res.Message));
+
             },
             callback: function (record, operation, success) {
                 // do something whether the save succeeded or failed

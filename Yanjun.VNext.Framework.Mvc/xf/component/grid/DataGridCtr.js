@@ -26,11 +26,13 @@
         var cmdHandlerName = command.toLowerCase() + '_execute';
         var fn = this.view[cmdHandlerName];
         if (Ext.isFunction(fn)) {
-            if (fn.call(this.view, btn) === false) return;
+            fn.call(this.view, btn);
+            return;
         }
         fn = this[cmdHandlerName];
         if (Ext.isFunction(fn)) {
-            if (fn.call(this, btn) === false) return;
+            fn.call(this, btn);
+            return;
         }
 
         cmdHandlerName = cmdHandlerName.replace(this.view.name.toLowerCase() + '_', '');
