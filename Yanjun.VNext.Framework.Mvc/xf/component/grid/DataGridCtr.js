@@ -102,5 +102,22 @@
         }, this);
 
         uploadDialog.show();
-    }
+    },
+
+    onRowDblClick: function () {
+        console.log(this);
+        this.edit_execute();
+    },
+
+    quicksearch_execute: function () {
+        alert("快搜索了");
+    },
+
+    refresh_execute: function () {
+        debugger
+        var store = this.view.getStore();
+        store.clearFilter();
+        store.customFilter = null;
+        store.load();
+    },
 });

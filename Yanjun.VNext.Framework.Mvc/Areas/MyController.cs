@@ -45,7 +45,7 @@ namespace Yanjun.VNext.Framework.Mvc.Areas
         public virtual JsonResult Create(T entity)
         {
             RestResponseDto res = new RestResponseDto();
-     
+            //throw new Exception("1223");
             Repository.Insert(entity);
             res.Entitys = new object[] { Repository.QueryFirst<T>(x => x.ID == entity.ID) };
             res.Success = true;
@@ -56,6 +56,7 @@ namespace Yanjun.VNext.Framework.Mvc.Areas
         public virtual JsonResult Update(T entity, string[] modified)
         {
             RestResponseDto res = new RestResponseDto();
+            //throw new Exception("1223");
             //var entity = Repository.QueryFirst<T>(x => x.ID == id);
             Repository.Update<T>(entity, modified);
             res.Entitys = new object[] { Repository.QueryFirst<T>(x => x.ID == entity.ID) };
@@ -74,14 +75,15 @@ namespace Yanjun.VNext.Framework.Mvc.Areas
 
             args.Page = args.Page == 0 ? 1 : args.Page;
 
-            Sorter sort = new Sorter() { SortField = "ID", SortOrder = System.Data.SqlClient.SortOrder.Descending };
-            if (args.Query.Sorters != null && args.Query.Sorters.Count > 0)
+            if (string.IsNullOrWhiteSpace(args.Sort))
             {
-                sort = args.Query.Sorters.First();
+                args.Sort = "ID";
+                args.SortDir = "desc";
             }
+
             string[] includes = args.Include;
             res.Count = Repository.GetQueryExp<T>(predicate, includes).Count();
-            res.Entitys = Repository.QueryPage<T>(predicate, new Pagination() { page = args.Page, rows = args.Limit, sidx = sort.SortField, sord = sort.SortOrder == System.Data.SqlClient.SortOrder.Ascending ? "asc" : "desc" }, includes);
+            res.Entitys = Repository.QueryPage<T>(predicate, new Pagination() { page = args.Page, rows = args.Limit, sidx = args.Sort, sord=args.SortDir}, includes);
             res.Success = true;
             return MyJson(res);
         }

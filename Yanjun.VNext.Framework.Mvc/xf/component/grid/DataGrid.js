@@ -57,20 +57,20 @@
         me.tbar.push({
             xtype: 'textfield',
             emptyText: '输入条件进行快捷搜索',
-            triggers: {
-                search: {
-                    cls: 'x-form-search-trigger',
-                    handler: function () {
-                        me.fireEvent("quicksearch");
-                    }
-                },
-                clear: {
-                    cls: 'x-form-clear-trigger',
-                    handler: function () {
-                        me.getStore().clearFilter();
-                    }
-                }
-            },
+            //triggers: {
+            //    search: {
+            //        cls: 'x-form-search-trigger',
+            //        handler: function () {
+            //            me.fireEvent("quicksearch");
+            //        }
+            //    },
+            //    clear: {
+            //        cls: 'x-form-clear-trigger',
+            //        handler: function () {
+            //            me.getStore().clearFilter();
+            //        }
+            //    }
+            //},
             keyMap: {
                 ENTER: {
                     handler: function () {
@@ -80,6 +80,11 @@
                 }
             }
         });
+
+        me.tbar.push(xf.utils.getActionButton("search"));
+
+        me.tbar.push(xf.utils.getActionButton("refresh"));
+
         return me.tbar;
     },
 
@@ -160,13 +165,13 @@
     beforeload: function (store, operation, eOpts) {
     },
 
-    onRowDblClick: function (grid, record) {
-        console.log("grid rowdblclick");
-    },
+    //onRowDblClick: function (grid, record) {
+    //    console.log("grid rowdblclick");
+    //},
 
-    onQuickSearch: function () {
-        alert("快搜索啦");
-    },
+    //onQuickSearch: function () {
+    //    alert("快搜索啦");
+    //},
 
     initComponent: function () {
 
@@ -191,9 +196,11 @@
             store.on("beforeload", me.beforeload, me);
         }
 
-        this.on('rowdblclick', me.onRowDblClick);
+        var controller = me.getController();
 
-        this.on("quicksearch", me.onQuickSearch);
+        this.on('rowdblclick', controller.onRowDblClick, controller);
+
+        //this.on("quicksearch", controller.onQuickSearch, controller);
 
     }
 

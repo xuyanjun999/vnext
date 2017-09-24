@@ -6,7 +6,10 @@ Ext.define('xf.core.utils.Message', {
         var buttons = Ext.Msg.YES;
         if (icon === Ext.Msg.QUESTION)
             buttons = Ext.Msg.YESNO;
-        var m = Ext.create("Ext.window.MessageBox", {
+        //var m = Ext.create("Ext.window.MessageBox", {
+        console.log(icon);
+        //});
+        var m = Ext.Msg.show({
             title: title,
             message: messgae,
             buttons: buttons,
@@ -14,7 +17,10 @@ Ext.define('xf.core.utils.Message', {
             fn: fn
         });
 
+
         m.on("close", onClose);
+
+        m.show();
 
         return m;
     },
@@ -29,7 +35,7 @@ Ext.define('xf.core.utils.Message', {
         types.forEach(function (t) {
             xf.message[t] = function (message, fn, onClose, title) {
                 if (!title) title = "消息";
-                return myToast.showMessage(t.toUpperCase(), title, message, fn, onClose);
+                return myToast.showMessage(Ext.Msg[t.toUpperCase()], title, message, fn, onClose);
             }
         });
 

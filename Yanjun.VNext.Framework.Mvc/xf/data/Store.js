@@ -15,6 +15,7 @@
     },
 
     beforeload: function (store, operation, eOpts) {
+        
         console.log("123");
         var filters = [];
         var operationFilters = operation._filters;

@@ -59,14 +59,12 @@
         if (!form.isValid())
             return;
 
-        var d = form.getForm().findField("CreateOn").getValue();
-        console.log(d);
+
         
         form.updateRecord();
         var record = form.getRecord();
 
-        d = form.getForm().findField("CreateOn").getValue();
-        console.log(d);
+
 
         if (!record.dirty) {
             xf.toast.error("数据未修改,不需要保存!");
@@ -77,6 +75,7 @@
             failure: function (record, operation) {
                 console.log(operation);
                 xf.message.error("保存失败!");
+               
             },
             success: function (record, operation) {
                 if (operation.getRequest().getAction() == "create") {
