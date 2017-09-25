@@ -2460,6 +2460,7 @@
     <Folder Include="Areas\Sys\Views\Shared\" />
     <Folder Include="Models\" />
     <Folder Include="Views\My\" />
+    <Folder Include="xf\component\form\field\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
