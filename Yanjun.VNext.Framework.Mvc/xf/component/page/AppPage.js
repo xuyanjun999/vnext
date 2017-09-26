@@ -7,5 +7,6 @@
     initComponent: function () {
 
         me.callParent();
+
     }
 });
