@@ -38,6 +38,10 @@ namespace Yanjun.VNext.Framework.Code.Web.Dto
         /// </summary>
         public int Limit { get; set; }
 
+        public string Sort { get; set; }
+
+        public string SortDir { get; set; }
+
         /// <summary>
         /// 增删改时 后台是否触发验证 默认触发
         /// </summary>

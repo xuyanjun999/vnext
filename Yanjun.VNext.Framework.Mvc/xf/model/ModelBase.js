@@ -2,12 +2,13 @@
     extend: 'Ext.data.Model',
     idProperty: 'ID',
 
-    constructor: function () {
-        var me = this;
-        me.proxy = {
-            type: 'rest',
-            url: me.api
-        };
-        me.callParent(arguments);
-    }
+    //constructor: function () {
+    //    var me = this;
+    //    me.callParent(arguments);
+
+    //    var 
+    //    xf.core.model.ModelBase.setProxy(proxy);
+
+
+    //}
 });

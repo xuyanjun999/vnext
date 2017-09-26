@@ -1,5 +1,5 @@
 ﻿Ext.define("xf.core.data.Proxy", {
-    extend: 'Ext.data.proxy.Rest',
+    extend: 'Ext.data.proxy.Ajax',
     alias: 'proxy.xf-proxy',
     config: {
         paramsAsJson: true,

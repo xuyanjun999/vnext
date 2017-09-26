@@ -242,7 +242,7 @@ Ext.define('xf.core.utils.Utils', {
 
     getActionButton: function (code) {
         var result = {
-           // xtype: 'button',
+            // xtype: 'button',
 
         };
         switch (code) {
@@ -257,17 +257,44 @@ Ext.define('xf.core.utils.Utils', {
                 result.action = "edit";
                 break;
             case "delete":
-                result.iconCls = "delete";
+                result.iconCls = "remove";
                 result.text = "删除";
                 result.action = "delete";
                 break;
             case "import":
-                result.iconCls = "import";
+                result.iconCls = "excel";
                 result.text = "导入";
                 result.action = "import";
                 break;
+            case "save":
+                result.iconCls = "save";
+                result.text = "保存";
+                result.action = "save";
+                break;
+            case "back":
+                result.iconCls = "back";
+                result.text = "返回";
+                result.action = "back";
+                break;
+            case "search":
+                result.iconCls = "search";
+                result.tooltip = "搜索";
+                result.action = "quickSearch";
+                break;
+            case "refresh":
+                result.iconCls = "reload";
+                result.tooltip = "刷新";
+                result.action = "refresh";
+                break;
         }
         return result;
+    },
+
+    getResponseObj: function (operation) {
+        
+        var responseText = operation.getResponse().responseText;
+        var responseObj = Ext.decode(responseText);
+        return responseObj;
     }
 
 },

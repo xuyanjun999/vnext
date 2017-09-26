@@ -27,15 +27,20 @@
         name: 'Remark',
         dtype: 'string',
         text: '备注'
-    },  {
+    }, {
         name: 'CreateOn',
-        dtype: 'date',
-        format: 'c',
+        type: 'date',
+        formatter: 'date("Y-m-d H:i:s")',
+        width: 120,
         text: '创建时间'
-    },  {
+    }, {
         name: 'UpdateOn',
-        dtype: 'date',
-        format: 'c',
+        type: 'date',
+        formatter: 'date("Y-m-d")',
         text: '更新时间'
-    }]
+    }],
+    proxy: {
+        type: 'xf-modelproxy',
+        url: '/org/company'
+    }
 });

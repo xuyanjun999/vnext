@@ -39,10 +39,8 @@ namespace Yanjun.VNext.Framework.Domain.Entity
         [NotMapped]
         public virtual bool Expanded { get; set; }
 
-        public virtual void FormatTreeNodeValue(object context)
-        {
-            
-        }
+        [NotMapped]
+        public virtual object[] Children { get; set; }
         #endregion
     }
 }
