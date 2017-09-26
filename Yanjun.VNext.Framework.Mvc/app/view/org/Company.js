@@ -12,7 +12,28 @@
             model: 'xf.model.org.Company',
             api: 'company/read',
             //defaultFilter: [{ fieldName: 'Name', operator: 'like', value: '杭州' }],
-            tbar: ["add", "edit", "delete", "import"]
+            tbar: ["add", "edit", "delete", "import"],
+            plugins:[{
+                ptype: 'rowwidget',
+                widget: {
+                    xtype: 'xf-grid',
+                    height:500,
+                    reference:'g',
+                    model: 'xf.model.org.Company',
+                    api: 'company/read',
+                    bind: {
+                        store: '{g.store}',
+                        title: 'Orders for {record.Name}'
+                    },
+                    tbar: [{
+                        text: '测试',
+                        handler: function () {
+                            console.log(this.up("xf-grid").viewModel);
+                        }
+                    }]
+                }
+            }]
+
         }, {
             xtype: 'xf-form',
             items: [{
