@@ -157,6 +157,7 @@ Ext.define('xf.core.utils.Utils', {
     ajax: function (opt) {
         var cfg = Ext.merge({
             method: 'POST',
+
             defaultHeaders: {
                 // 'x-sef': 'true',
                 //  'ID': sef.runningCfg.getUser().ID,
@@ -176,10 +177,10 @@ Ext.define('xf.core.utils.Utils', {
                 var o = Ext.JSON.decode(resp.responseText);
                 if (o.Success === true) {
                     if (success) {
-                        success.call(scope, o.Result, o);
+                        success.call(scope, o);
                     }
                 } else {
-                    failure && failure.call(scope, xf.utils.formatError(o));
+                    failure && failure.call(scope,o);
                 }
                 //console.log(o);
 

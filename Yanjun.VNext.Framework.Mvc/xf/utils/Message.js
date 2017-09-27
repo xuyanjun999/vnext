@@ -2,13 +2,21 @@
 
 Ext.define('xf.core.utils.Message', {
 
-    showMessage: function (icon, title, messgae, fn, onClose) {
+    showMessage: function (type, title, messgae, fn) {
+
+        var m = null;
+        var icon = Ext.Msg.INFO;
         var buttons = Ext.Msg.YES;
-        if (icon === Ext.Msg.QUESTION)
+        if (type === "error") {
+            icon = Ext.Msg.ERROR;
+        }
+
+        if (type === "confirm") {
+            icon = Ext.Msg.QUESTION;
             buttons = Ext.Msg.YESNO;
-        //var m = Ext.create("Ext.window.MessageBox", {
-        console.log(icon);
-        //});
+        }
+
+        Ext.Msg.QUESTION
         var m = Ext.Msg.show({
             title: title,
             message: messgae,
@@ -17,25 +25,20 @@ Ext.define('xf.core.utils.Message', {
             fn: fn
         });
 
-
-        m.on("close", onClose);
-
-        m.show();
-
         return m;
     },
 
 }, function (msg) {
     //singleton
     var myToast = new msg();
-    var types = ['info', 'error', 'warning', 'question'];
+    var types = ['alert', 'error', 'confirm', 'prompt'];
     //console.log('will make new message now');
     if (!xf.message) {
         xf.message = {};
         types.forEach(function (t) {
-            xf.message[t] = function (message, fn, onClose, title) {
+            xf.message[t] = function (title, message, fn, onClose) {
                 if (!title) title = "消息";
-                return myToast.showMessage(Ext.Msg[t.toUpperCase()], title, message, fn, onClose);
+                return myToast.showMessage(t, title, message, fn, onClose);
             }
         });
 

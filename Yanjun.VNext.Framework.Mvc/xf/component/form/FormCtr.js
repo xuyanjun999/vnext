@@ -50,44 +50,48 @@
 
     back_execute: function (btn) {
         var form = this.view;
-        form.ownerCt.getLayout().prev();
+        if (Ext.isFunction(form.ownerCt.getLayout().prev)) {
+            form.ownerCt.getLayout().prev();
+        }
+        else if (Ext.isFunction(form.ownerCt.ownerCt.getLayout().prev)) {
+            form.ownerCt.ownerCt.getLayout().prev();
+        }
+
         return false;
     },
 
     save_execute: function () {
         var form = this.view;
+        console.log(form);
         if (!form.isValid())
             return;
 
-
-        
         form.updateRecord();
+
         var record = form.getRecord();
-
-
 
         if (!record.dirty) {
             xf.toast.error("数据未修改,不需要保存!");
             return;
-        }
-        console.log(record);
+        };
+
         record.save({
             failure: function (record, operation) {
                 console.log(operation);
                 xf.message.error("保存失败!");
-               
+
             },
             success: function (record, operation) {
                 if (operation.getRequest().getAction() == "create") {
                     form.store.insert(0, record);
                 }
                 var res = xf.utils.getResponseObj(operation);
-                console.log(res);
+        
                 xf.toast.info("保存成功!" + (res.Message == null ? "" : res.Message));
 
             },
             callback: function (record, operation, success) {
-                // do something whether the save succeeded or failed
+               
             }
         });
 

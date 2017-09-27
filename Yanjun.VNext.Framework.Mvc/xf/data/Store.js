@@ -11,7 +11,10 @@
         defaultFilter: null,
         //临时过滤
         customFilter: null,
-        api: null
+
+        api: null,
+
+        pageSize:100
     },
 
     beforeload: function (store, operation, eOpts) {
