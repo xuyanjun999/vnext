@@ -6,6 +6,7 @@
     store: null,
     border: false,
     bodyPadding: 5,
+    scrollable: true,
     defaults: {
         labelAlign: 'top',
         columnWidth: 0.5,
@@ -27,10 +28,17 @@
         return me.tbar;
     },
 
+
+   
+
     initComponent: function () {
         var me = this;
         me.tbar = me.makeTBar();
         this.callParent(arguments);
+
+        var controller = me.getController();
+
+        //this.on('beforeshow', controller.onBeforeShow, controller);
 
     }
 });

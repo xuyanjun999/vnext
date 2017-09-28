@@ -9,7 +9,7 @@ namespace Yanjun.VNext.Framework.Mapping.Org
 {
     public class CompanyMap : EntityMapBase<CompanyEntity>
     {
-        public CompanyMap() : base("SGEAP_CORE_Company")
+        public CompanyMap() : base("SGEAP_ORG_Company")
         {
             //this.HasOptional(x => x.Parent).WithMany().HasForeignKey<long?>(x => x.ParentID);
         }

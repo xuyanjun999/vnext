@@ -1,7 +1,10 @@
 ﻿Ext.define("xf.view.org.Company", {
     extend: 'xf.core.component.page.AppPage',
     title: '公司管理',
-    requires: ['xf.view.org.CompanyForm'],
+    requires: [
+        'xf.view.org.CompanyForm',
+        'xf.view.org.DepartmentForm',
+    ],
     items: [{
         xtype: 'panel',
         border: false,

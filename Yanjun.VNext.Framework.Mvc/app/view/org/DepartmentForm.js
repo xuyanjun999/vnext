@@ -1,6 +1,6 @@
-﻿Ext.define("xf.view.org.CompanyForm", {
+﻿Ext.define("xf.view.org.DepartmentForm", {
     extend: 'xf.core.component.form.Form',
-    xtype: 'companyform',
+    xtype: 'departmentform',
     items: [{
         fieldLabel: '编号',
         allowBlank: false,
@@ -9,10 +9,7 @@
         fieldLabel: '名称',
         allowBlank: false,
         name: 'Name'
-    }, {
-        fieldLabel: '地址',
-        name: 'Address'
-    }, {
+    },{
         fieldLabel: '电话',
         name: 'Tel'
     }, {
@@ -28,18 +25,6 @@
         name: 'Remark',
         xtype: 'textarea',
         columnWidth: 1,
-    }, {
-        xtype: 'xf-gridfield',
-     
-        model: 'xf.model.org.Department',
-        api: '/org/department/read',
-        columnWidth: 1,
-        //defaultFilter: [{ fieldName: 'Name', operator: 'like', value: '杭州' }],
-        tbar: ["add", "edit", "delete", "import"],
-        editor: {
-            xtype: 'departmentform',
-        },
-        pidName: 'ID',
     }],
     tbar: ['save', 'back']
 });

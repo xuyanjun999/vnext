@@ -20,9 +20,7 @@
     },
 
     onExecuteAction: function (command, btn) {
-        //if (this.fireViewEvent('childcommand', command, btn) === false) {
-        //    return false;
-        //};
+
         var cmdHandlerName = command.toLowerCase() + '_execute';
         var fn = this.view[cmdHandlerName];
         if (Ext.isFunction(fn)) {
@@ -40,11 +38,11 @@
             fn.call(this, btn); return;
         }
 
-        cmdHandlerName = cmdHandlerName.replace(this.view.name.toLowerCase() + '_', '');
-        fn = this.view[cmdHandlerName];
-        if (Ext.isFunction(fn)) {
-            if (fn.call(this.view, btn) === false) return;
-        }
+        //cmdHandlerName = cmdHandlerName.replace(this.view.name.toLowerCase() + '_', '');
+        //fn = this.view[cmdHandlerName];
+        //if (Ext.isFunction(fn)) {
+        //    if (fn.call(this.view, btn) === false) return;
+        //}
 
 
         //console.log('not found#', cmdHandlerName);
@@ -59,8 +57,9 @@
         //grid.getStore().insert(0, record);
         var form = grid.ownerCt.getLayout().next();
         form.store = grid.getStore();
-        console.log(record);
-        form.reset();
+
+
+        form.getForm().reset();
         form.loadRecord(record);
     },
 
@@ -73,8 +72,8 @@
         }
         var record = records[0];
         var form = grid.ownerCt.getLayout().next();
-        console.log(record);
-        form.reset();
+      
+        form.getForm().reset();
         form.loadRecord(record);
     },
 

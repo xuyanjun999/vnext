@@ -153,6 +153,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\MyController.cs" />
+    <Compile Include="Areas\Org\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\Org\OrgAreaRegistration.cs" />
     <Compile Include="Areas\Org\Controllers\CompanyController.cs" />
     <Compile Include="Areas\Sys\Controllers\MenuController.cs" />
@@ -170,9 +171,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\model\org\Company.js" />
+    <Content Include="app\model\org\Department.js" />
     <Content Include="app\model\org\Staff.js" />
     <Content Include="app\view\org\Company.js" />
     <Content Include="app\view\org\CompanyForm.js" />
+    <Content Include="app\view\org\DepartmentForm.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\icon.css" />
@@ -2333,7 +2336,10 @@
     <Content Include="xf\component\form\FormCtr.js" />
     <Content Include="xf\component\grid\DataGrid.js" />
     <Content Include="xf\component\grid\DataGridCtr.js" />
+    <Content Include="xf\component\grid\DataGridField.js" />
+    <Content Include="xf\component\grid\DataGridFieldCtr.js" />
     <Content Include="xf\component\page\AppPage.js" />
+    <Content Include="xf\component\window\FormEditWindow.js" />
     <Content Include="xf\data\JsonWriter.js" />
     <Content Include="xf\data\ModelProxy.js" />
     <Content Include="xf\data\Proxy.js" />
@@ -2455,6 +2461,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Org\Models\" />
+    <Folder Include="Areas\Org\Views\Department\" />
     <Folder Include="Areas\Org\Views\Shared\" />
     <Folder Include="Areas\Sys\Models\" />
     <Folder Include="Areas\Sys\Views\Menu\" />

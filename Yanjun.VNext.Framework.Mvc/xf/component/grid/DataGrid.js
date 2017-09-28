@@ -56,6 +56,7 @@
         me.tbar.push("->");
         me.tbar.push({
             xtype: 'textfield',
+            itemId:'gridsearchtext',
             emptyText: '输入条件进行快捷搜索',
             //triggers: {
             //    search: {
@@ -199,6 +200,8 @@
         var controller = me.getController();
 
         this.on('rowdblclick', controller.onRowDblClick, controller);
+
+        this.on('refresh', controller.refresh_execute, controller);
 
         //this.on("quicksearch", controller.onQuickSearch, controller);
 

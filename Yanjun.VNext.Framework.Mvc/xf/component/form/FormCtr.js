@@ -20,9 +20,6 @@
     },
 
     onExecuteAction: function (command, btn) {
-        //if (this.fireViewEvent('childcommand', command, btn) === false) {
-        //    return false;
-        //};
         var cmdHandlerName = command.toLowerCase() + '_execute';
         var fn = this.view[cmdHandlerName];
         if (Ext.isFunction(fn)) {
@@ -31,21 +28,14 @@
         }
         fn = this[cmdHandlerName];
         if (Ext.isFunction(fn)) {
-            fn.call(this, btn)
+            fn.call(this, btn);
             return;
         }
 
-        cmdHandlerName = cmdHandlerName.replace(this.view.name.toLowerCase() + '_', '');
-        fn = this.view[cmdHandlerName];
-        if (Ext.isFunction(fn)) {
-            if (fn.call(this.view, btn) === false) return;
-        }
         fn = this[cmdHandlerName];
         if (Ext.isFunction(fn)) {
-            if (fn.call(this, btn) === false) return;
+            fn.call(this, btn); return;
         }
-
-        //console.log('not found#', cmdHandlerName);
     },
 
     back_execute: function (btn) {
@@ -96,4 +86,6 @@
         });
 
     }
+
+
 });

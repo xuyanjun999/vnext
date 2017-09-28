@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Yanjun.VNext.Framework.Domain.Entity;
 using Newtonsoft.Json;
 using Yanjun.VNext.Framework.Domain.Entity.Org;
+using System.ComponentModel;
 
 namespace Yanjun.VNext.Framework.Domain.Entity.Org
 {
@@ -15,33 +16,19 @@ namespace Yanjun.VNext.Framework.Domain.Entity.Org
     public class DepartmentEntity : BaseAcsRecTreeNodeEntity
     {
         /// <summary>
-        /// 部门英文名
-        /// </summary>
-        public string EnName { get; set; }
-        /// <summary>
         /// 部门中文名
         /// </summary>
-        public string CnName { get; set; }
-        /// <summary>
-        /// 简称
-        /// </summary>
-        public string ShortName { get; set; }
+        public string Name { get; set; }
         /// <summary>
         /// 部门编码
         /// </summary>
         public string Code { get; set; }
-        /// <summary>
-        /// 部门描述
-        /// </summary>
-        public string Des { get; set; }
-        /// <summary>
-        /// 传真
-        /// </summary>
-        public string Fax { get; set; }
+
         /// <summary>
         /// 部门电话
         /// </summary>
         public string Tel { get; set; }
+
         /// <summary>
         /// 部门邮箱
         /// </summary>
@@ -60,10 +47,16 @@ namespace Yanjun.VNext.Framework.Domain.Entity.Org
         /// <summary>
         /// 公司ID
         /// </summary>
-        public long? CompyID { get; set; }
+        public long CompyID { get; set; }
         /// <summary>
         /// 所属公司对象
         /// </summary>
         public CompanyEntity Company { get; set; }
+
+        /// <summary>
+        ///描述
+        ///</summary>
+        [Description("描述")]
+        public string Remark { get; set; }
     }
 }
