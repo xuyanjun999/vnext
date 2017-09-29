@@ -39,7 +39,8 @@
         editor: {
             xtype: 'departmentform',
         },
-        pidName: 'ID',
+        pname: 'ID',
+        filterName:'CompyID'
     }],
     tbar: ['save', 'back']
 });

@@ -10,7 +10,7 @@
 
         record.setId(0);
 
-        record.set(grid.fidName, grid.pid);
+        record.set(grid.filterName, grid.pid);
 
         this.showEditWin(record);
     },
@@ -43,6 +43,8 @@
         });
         editWin.show();
 
+        form = editWin.down("xf-form");
+
         form.store = grid.getStore();
 
         form.getForm().reset();
@@ -50,6 +52,32 @@
         form.loadRecord(record);
 
     },
+
+    onRecordChange: function () {
+        var me = this;
+        var view = me.view;
+        var form = me.view.up("xf-form");
+        var record = form.getRecord();
+        console.log(typeof record.getId());
+        if (Ext.isNumber(record.getId())&& record.getId()>0) {
+
+            view.show();
+
+            view.pid = record.get(view.pname);
+            view.getStore().customFilter = null;
+
+            view.getStore().defaultFilter = [{
+                property: view.filterName,
+                operator: '=',
+                value: view.pid
+            }];
+
+            view.fireEvent("refresh");
+        }
+        else {
+            view.hide();
+        }
+    }
 
 
 });

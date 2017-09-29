@@ -6,10 +6,14 @@
         //表单编辑 xf-form
         editor: null,
         height: 400,
-        pidName: 'ID',
-        fidName: '',
+        pname: 'ID',
+        pid: null,
+        filterName:'CompyID',
     },
-
-
-
+    initComponent: function () {
+        var me = this;
+        me.callParent(arguments);
+        var controller = this.getController();
+        me.on("recordchange", controller.onRecordChange, controller);
+    }
 });

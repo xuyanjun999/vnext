@@ -5,7 +5,7 @@
     border: false,
     closable: true,
     layout: 'fit',
-    height: Ext.getBody().getHeight() * 0.6,
+    height: Ext.getBody().getHeight() * 0.8,
     width: Ext.getBody().getWidth() * 0.6,
     scrollable: true
 });

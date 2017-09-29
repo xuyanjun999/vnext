@@ -9,7 +9,8 @@
     control: {
         'button[action]': {
             'click': 'onActionButtonClick'
-        }
+        },
+
     },
 
 
@@ -53,28 +54,41 @@
         var grid = this.view;
 
         var record = Ext.create(grid.model);
-        record.setId(0);
-        //grid.getStore().insert(0, record);
-        var form = grid.ownerCt.getLayout().next();
-        form.store = grid.getStore();
 
+        record.setId(0);
+
+        var form = grid.ownerCt.down("xf-form");
 
         form.getForm().reset();
+
         form.loadRecord(record);
+
+        form.store = grid.getStore();
+
+        grid.ownerCt.getLayout().next();
+     
     },
 
     edit_execute: function (btn) {
         var grid = this.view;
+
         var records = grid.getSelection();
+
         if (!records || records.length <= 0) {
             xf.toast.error("请选中要编辑的数据!");
             return;
         }
         var record = records[0];
-        var form = grid.ownerCt.getLayout().next();
-      
+
+        var form = grid.ownerCt.down("xf-form");
+        
         form.getForm().reset();
+
         form.loadRecord(record);
+
+        form.store = grid.getStore();
+
+        grid.ownerCt.getLayout().next();
     },
 
     delete_execute: function (btn) {
@@ -100,7 +114,7 @@
                     }
                 });
             }
-         
+
         });
 
 
@@ -140,10 +154,16 @@
         alert("快搜索了");
     },
 
-    refresh_execute: function () {
+    onRefresh: function () {
         var store = this.view.getStore();
         store.clearFilter();
         store.customFilter = null;
         store.load();
+    },
+
+    refresh_execute: function () {
+        var grid = this.view;
+        grid.fireEvent("refresh");
+
     },
 });

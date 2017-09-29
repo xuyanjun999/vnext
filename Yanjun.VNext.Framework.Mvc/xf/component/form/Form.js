@@ -36,7 +36,7 @@
         me.tbar = me.makeTBar();
         this.callParent(arguments);
 
-        var controller = me.getController();
+       // var controller = me.getController();
 
         //this.on('beforeshow', controller.onBeforeShow, controller);
 

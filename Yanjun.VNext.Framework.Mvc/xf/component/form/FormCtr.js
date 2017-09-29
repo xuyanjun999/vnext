@@ -9,7 +9,11 @@
     control: {
         'button[action]': {
             'click': 'onActionButtonClick'
+        },
+        '#': {
+            'beforeshow': 'onBeforeShow'
         }
+
     },
 
 
@@ -74,18 +78,30 @@
             success: function (record, operation) {
                 if (operation.getRequest().getAction() == "create") {
                     form.store.insert(0, record);
+
+                    var gridfields = Ext.ComponentQuery.query("xf-gridfield", form);
+                    gridfields.forEach(function (gridfield) {
+                        gridfield.fireEvent("recordchange");
+                    });
                 }
                 var res = xf.utils.getResponseObj(operation);
-        
+
                 xf.toast.info("保存成功!" + (res.Message == null ? "" : res.Message));
 
             },
             callback: function (record, operation, success) {
-               
+
             }
         });
 
+    },
+
+    onBeforeShow: function () {
+        var form = this.view;
+        var record = form.getRecord();
+        var gridfields = Ext.ComponentQuery.query("xf-gridfield", form);
+        gridfields.forEach(function (gridfield) {
+            gridfield.fireEvent("recordchange");
+        });
     }
-
-
 });

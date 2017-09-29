@@ -199,9 +199,9 @@
 
         var controller = me.getController();
 
-        this.on('rowdblclick', controller.onRowDblClick, controller);
+        me.on('rowdblclick', controller.onRowDblClick, controller);
 
-        this.on('refresh', controller.refresh_execute, controller);
+        me.on('refresh', controller.onRefresh, controller);
 
         //this.on("quicksearch", controller.onQuickSearch, controller);
 
