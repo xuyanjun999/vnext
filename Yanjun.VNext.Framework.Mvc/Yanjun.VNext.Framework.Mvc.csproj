@@ -2332,6 +2332,7 @@
     <Content Include="Extjs\ux\classic\ux-all-debug.scss" />
     <Content Include="Extjs\ux\classic\ux-all-rtl-debug.scss" />
     <Content Include="xf\Application.js" />
+    <Content Include="xf\component\form\field\FieldOverride.js" />
     <Content Include="xf\component\form\Form.js" />
     <Content Include="xf\component\form\FormCtr.js" />
     <Content Include="xf\component\grid\DataGrid.js" />
@@ -2468,7 +2469,6 @@
     <Folder Include="Areas\Sys\Views\Shared\" />
     <Folder Include="Models\" />
     <Folder Include="Views\My\" />
-    <Folder Include="xf\component\form\field\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -4,11 +4,13 @@
     items: [{
         fieldLabel: '编号',
         allowBlank: false,
-        name: 'Code'
+        name: 'Code',
+        allowBlank: false
     }, {
         fieldLabel: '名称',
         allowBlank: false,
-        name: 'Name'
+        name: 'Name',
+        allowBlank: false
     }, {
         fieldLabel: '地址',
         name: 'Address'
