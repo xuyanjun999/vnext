@@ -13,7 +13,7 @@
     initComponent: function () {
         var me = this;
         me.callParent(arguments);
-        var controller = this.getController();
-        me.on("recordchange", controller.onRecordChange, controller);
+        //var controller = this.getController();
+       // me.on("recordchange", controller.onRecordChange, controller);
     }
 });

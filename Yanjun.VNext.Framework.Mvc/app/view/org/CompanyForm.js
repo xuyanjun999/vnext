@@ -1,6 +1,7 @@
 ﻿Ext.define("xf.view.org.CompanyForm", {
     extend: 'xf.core.component.form.Form',
     xtype: 'companyform',
+    reference: 'companyform',
     items: [{
         fieldLabel: '编号',
         allowBlank: false,
@@ -32,17 +33,28 @@
         columnWidth: 1,
     }, {
         xtype: 'xf-gridfield',
-     
         model: 'xf.model.org.Department',
         api: '/org/department/read',
+        title: '123',
+       // hidden: false,
         columnWidth: 1,
+        bind: {
+            hidden: '{isAdd}',
+            //title: '{companyform.getForm()._record.get("Name")}'
+        },
         //defaultFilter: [{ fieldName: 'Name', operator: 'like', value: '杭州' }],
-        tbar: ["add", "edit", "delete", "import"],
+        tbar: ["add", "edit", "delete", "import", {
+            text: '测试',
+            handler: function () {
+                console.log(this.up("companyform").getForm()._record);
+                alert(this.up("companyform").getForm()._record.get("Name"));
+            }
+        }],
         editor: {
             xtype: 'departmentform',
         },
         pname: 'ID',
-        filterName:'CompyID'
+        filterName: 'CompyID'
     }],
     tbar: ['save', 'back']
 });

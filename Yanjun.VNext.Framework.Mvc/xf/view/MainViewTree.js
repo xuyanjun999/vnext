@@ -7,7 +7,7 @@
         width:1
     },
     collapsible: true,
-    useArrows: true,
+    //useArrows: true,
     border: false,
     rootVisible: false,
     titleCollapse: false,

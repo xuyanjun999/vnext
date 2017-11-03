@@ -59,6 +59,8 @@
 
         var form = grid.ownerCt.down("xf-form");
 
+        form.getViewModel().set("isAdd", true);
+
         form.getForm().reset();
 
         form.loadRecord(record);
@@ -81,6 +83,8 @@
         var record = records[0];
 
         var form = grid.ownerCt.down("xf-form");
+
+        form.getViewModel().set("isAdd", false);
         
         form.getForm().reset();
 

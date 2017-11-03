@@ -22,5 +22,12 @@
     "Leaf": true,
     "ParentID": 3,
     "Url": "xf.view.org.Company"
+  },
+  {
+    "ID": 5,
+    "Text": "部门管理",
+    "Leaf": true,
+    "ParentID": 3,
+    "Url": "xf.view.org.Department"
   }
 ]

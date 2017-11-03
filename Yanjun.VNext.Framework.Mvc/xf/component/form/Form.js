@@ -7,6 +7,11 @@
     border: false,
     bodyPadding: 5,
     scrollable: true,
+    viewModel: {
+        data: {
+            isAdd: false
+        }
+    },
     defaults: {
         labelAlign: 'top',
         columnWidth: 0.5,
