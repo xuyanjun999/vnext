@@ -2,6 +2,12 @@
     extend: 'xf.core.component.grid.DataGridCtr',
     alias: 'controller.xf-gridfieldctr',
 
+    control: {
+        '#': {
+            'beforeshow': 'onBeforeshow'
+        },
+
+    },
 
     add_execute: function (btn) {
         var grid = this.view;
@@ -77,6 +83,10 @@
         else {
             view.hide();
         }
+    },
+
+    onBeforeshow: function () {
+        console.log("before show1");
     }
 
 
